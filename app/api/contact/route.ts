@@ -165,25 +165,32 @@ export async function POST(request: NextRequest) {
     // 2. Store in database
     // 3. Send to CRM
     
+// 🔹 Decide recipient based on service
+const recipientEmail =
+  sanitizedData.service === "general"
+    ? "info@rankboost.africa"
+    : "service@rankboost.africa"
+
+// 🔹 Create transporter (Afrihost SMTP)
 const transporter = nodemailer.createTransport({
-  host: process.env.SMTP_HOST,
-  port: Number(process.env.SMTP_PORT),
-  secure: Number(process.env.SMTP_PORT) === 587, // ✅ auto-detect
+  host: "mail.rankboost.africa",
+  port: 465, // ✅ Afrihost SSL SMTP
+  secure: true,
   auth: {
     user: process.env.SMTP_USER,
     pass: process.env.SMTP_PASS,
   },
   tls: {
-    rejectUnauthorized: false, // ✅ Afrihost needs this
+    rejectUnauthorized: false, // ✅ Required for Afrihost
   },
 })
 
-
+// 🔹 Send email
 await transporter.sendMail({
   from: `"RankBoost Africa" <${process.env.SMTP_USER}>`,
-  to: "info@rankboost.africa",
+  to: recipientEmail,
   replyTo: sanitizedData.email,
-  subject: `[${sanitizedData.service}] ${sanitizedData.subject}`,
+  subject: `[${sanitizedData.service.toUpperCase()}] ${sanitizedData.subject}`,
   html: `
     <h2>New Contact Form Submission</h2>
     <p><strong>Name:</strong> ${sanitizedData.name}</p>
