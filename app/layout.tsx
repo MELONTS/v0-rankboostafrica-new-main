@@ -11,7 +11,7 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "RankBoost | SEO, Web Development & Hosting Services",
   description: "Rank your business on Google's first page with our expert Digital Marketing services.",
-  authors: [{ name: 'Sabeconnect' }],
+  authors: [{ name: 'Sabe Investment Holdings (Pty) Ltd' }],
   keywords: [
     'SEO services South Africa',
     'SEO services Cape Town',
