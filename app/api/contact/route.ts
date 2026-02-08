@@ -165,15 +165,19 @@ export async function POST(request: NextRequest) {
     // 2. Store in database
     // 3. Send to CRM
     
- const transporter = nodemailer.createTransport({
+const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
   port: Number(process.env.SMTP_PORT),
-  secure: true, // Afrihost uses SSL
+  secure: Number(process.env.SMTP_PORT) === 465, // ✅ auto-detect
   auth: {
     user: process.env.SMTP_USER,
     pass: process.env.SMTP_PASS,
   },
+  tls: {
+    rejectUnauthorized: false, // ✅ Afrihost needs this
+  },
 })
+
 
 await transporter.sendMail({
   from: `"RankBoost Africa" <${process.env.SMTP_USER}>`,
