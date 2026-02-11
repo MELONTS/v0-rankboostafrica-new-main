@@ -1,186 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-  
-  <!-- Homepage - Primary canonical URL (www version) -->
+
   <url>
     <loc>https://www.rankboost.africa/</loc>
-    <xhtml:link rel="alternate" hreflang="en-ZA" href="https://www.rankboost.africa/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.rankboost.africa/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.rankboost.africa/"/>
-    <lastmod>2026-01-31</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
+
     <image:image>
       <image:loc>https://www.rankboost.africa/favicon.png</image:loc>
       <image:title>RankBoost Africa - Digital Marketing Services</image:title>
     </image:image>
-  </url>
-  
-  <!-- Services Overview Section -->
-  <url>
-    <loc>https://www.rankboost.africa/#services</loc>
-    <xhtml:link rel="alternate" hreflang="en-ZA" href="https://www.rankboost.africa/#services"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.rankboost.africa/#services"/>
-    <lastmod>2026-01-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <!-- Services Comparison Table -->
-  <url>
-    <loc>https://www.rankboost.africa/#services-comparison</loc>
-    <xhtml:link rel="alternate" hreflang="en-ZA" href="https://www.rankboost.africa/#services-comparison"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.rankboost.africa/#services-comparison"/>
-    <lastmod>2026-01-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <!-- Individual SEO Services -->
-  <url>
-    <loc>https://www.rankboost.africa/#local-seo</loc>
-    <xhtml:link rel="alternate" hreflang="en-ZA" href="https://www.rankboost.africa/#local-seo"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.rankboost.africa/#local-seo"/>
-    <lastmod>2026-01-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.rankboost.africa/#regional-seo</loc>
-    <xhtml:link rel="alternate" hreflang="en-ZA" href="https://www.rankboost.africa/#regional-seo"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.rankboost.africa/#regional-seo"/>
-    <lastmod>2026-01-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.rankboost.africa/#national-seo</loc>
-    <xhtml:link rel="alternate" hreflang="en-ZA" href="https://www.rankboost.africa/#national-seo"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.rankboost.africa/#national-seo"/>
-    <lastmod>2026-01-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  
-  <!-- Individual Web Development Services -->
-  <url>
-    <loc>https://www.rankboost.africa/#wordpress-websites</loc>
-    <xhtml:link rel="alternate" hreflang="en-ZA" href="https://www.rankboost.africa/#wordpress-websites"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.rankboost.africa/#wordpress-websites"/>
-    <lastmod>2026-01-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.rankboost.africa/#government-websites</loc>
-    <xhtml:link rel="alternate" hreflang="en-ZA" href="https://www.rankboost.africa/#government-websites"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.rankboost.africa/#government-websites"/>
-    <lastmod>2026-01-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.rankboost.africa/#shopify-websites</loc>
-    <xhtml:link rel="alternate" hreflang="en-ZA" href="https://www.rankboost.africa/#shopify-websites"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.rankboost.africa/#shopify-websites"/>
-    <lastmod>2026-01-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  
-  <!-- Service Packs -->
-  <url>
-    <loc>https://www.rankboost.africa/#starter-pack</loc>
-    <xhtml:link rel="alternate" hreflang="en-ZA" href="https://www.rankboost.africa/#starter-pack"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.rankboost.africa/#starter-pack"/>
-    <lastmod>2026-01-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.rankboost.africa/#maintenance-pack</loc>
-    <xhtml:link rel="alternate" hreflang="en-ZA" href="https://www.rankboost.africa/#maintenance-pack"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.rankboost.africa/#maintenance-pack"/>
-    <lastmod>2026-01-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  
-  <!-- SEO Services Section -->
-  <url>
-    <loc>https://www.rankboost.africa/#seo</loc>
-    <xhtml:link rel="alternate" hreflang="en-ZA" href="https://www.rankboost.africa/#seo"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.rankboost.africa/#seo"/>
-    <lastmod>2026-01-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+
     <image:image>
       <image:loc>https://www.rankboost.africa/images/seo-services.jpg</image:loc>
-      <image:title>SEO Services South Africa - RankBoost Africa</image:title>
     </image:image>
-  </url>
-  
-  <!-- Web Development Services Section -->
-  <url>
-    <loc>https://www.rankboost.africa/#web-development</loc>
-    <xhtml:link rel="alternate" hreflang="en-ZA" href="https://www.rankboost.africa/#web-development"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.rankboost.africa/#web-development"/>
-    <lastmod>2026-01-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+
     <image:image>
       <image:loc>https://www.rankboost.africa/images/web-development.jpg</image:loc>
-      <image:title>Web Development Services - RankBoost Africa</image:title>
     </image:image>
-  </url>
-  
-  <!-- Web Hosting Services Section -->
-  <url>
-    <loc>https://www.rankboost.africa/#hosting</loc>
-    <xhtml:link rel="alternate" hreflang="en-ZA" href="https://www.rankboost.africa/#hosting"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.rankboost.africa/#hosting"/>
-    <lastmod>2026-01-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+
     <image:image>
       <image:loc>https://www.rankboost.africa/images/web-hosting.jpg</image:loc>
-      <image:title>Web Hosting Services South Africa - RankBoost Africa</image:title>
     </image:image>
-  </url>
-  
-  <!-- Content Marketing Services Section -->
-  <url>
-    <loc>https://www.rankboost.africa/#content</loc>
-    <xhtml:link rel="alternate" hreflang="en-ZA" href="https://www.rankboost.africa/#content"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.rankboost.africa/#content"/>
-    <lastmod>2026-01-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+
     <image:image>
       <image:loc>https://www.rankboost.africa/images/content-marketing.jpg</image:loc>
-      <image:title>Content Marketing Services - RankBoost Africa</image:title>
     </image:image>
-  </url>
-  
-  <!-- About Section -->
-  <url>
-    <loc>https://www.rankboost.africa/#about</loc>
-    <xhtml:link rel="alternate" hreflang="en-ZA" href="https://www.rankboost.africa/#about"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.rankboost.africa/#about"/>
-    <lastmod>2026-01-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+
     <image:image>
       <image:loc>https://www.rankboost.africa/images/team.jpg</image:loc>
-      <image:title>RankBoost Africa Team - Digital Marketing Experts</image:title>
     </image:image>
+
   </url>
 
 </urlset>
