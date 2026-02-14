@@ -32,7 +32,7 @@ export function WebDevSection() {
             {/* Floating Stats Card */}
             <div className="absolute -bottom-4 right-4 sm:-bottom-6 sm:-right-6 bg-card p-4 sm:p-6 rounded-xl shadow-xl border border-border">
               <div className="text-2xl sm:text-3xl font-bold text-primary">
-                500+
+                100+
               </div>
               <div className="text-xs sm:text-sm text-muted-foreground">Websites Delivered</div>
             </div>
