@@ -60,6 +60,7 @@
     "tailwindcss-animate": "^1.0.7",
     "tw-animate-css": "latest",
     "vaul": "^1.1.2",
+    "yup": "^1.7.1",
     "zod": "3.25.76"
   },
   "devDependencies": {
