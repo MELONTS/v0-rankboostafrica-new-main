@@ -25,12 +25,10 @@ export function HostingSection() {
               Web Hosting Services
             </span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 md:mb-6 text-balance">
-              Reliable Web Hosting You Can Trust
+              Reliable Web Hosting Services
             </h2>
             <p className="text-muted-foreground text-sm sm:text-base md:text-lg mb-6 sm:mb-8 leading-relaxed">
-              Keep your website fast, secure, and always online with our managed hosting solutions.
-              From small business sites to high-traffic e-commerce platforms, we provide the
-              infrastructure your business needs to succeed.
+              Keep your website fast, secure, and always online with our web hosting services and solutions. From small business sites to high-traffic e-commerce platforms, we provide the infrastructure your business needs to succeed.
             </p>
 
             <ul className="space-y-2 sm:space-y-3 mb-6 sm:mb-8">
