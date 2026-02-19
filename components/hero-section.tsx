@@ -50,12 +50,12 @@ export function HeroSection() {
 
           {/* Main Headline */}
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight mb-3 sm:mb-4 md:mb-6 text-balance">
-            Best <span className="text-primary">SEO</span> and Web Development Services
+            Best <span className="text-primary">Digital</span> Marketing Services in South Africa
           </h1>
 
           {/* Sub-headline */}
           <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground mb-5 sm:mb-6 md:mb-8 max-w-2xl mx-auto leading-relaxed text-pretty">
-            From expert SEO to full web development, hosting, and copywriting, we provide growth-driven digital marketing services that help your business stand out in local and global search engine markets.
+            We help SMEs and eCommerce brands grow their organic visibility and turn traffic into real leads through strategic SEO, high-performance web development, secure hosting and data-driven content management (social media management).
           </p>
 
           {/* Service Highlights */}
