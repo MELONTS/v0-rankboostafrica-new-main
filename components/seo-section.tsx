@@ -28,7 +28,7 @@ export function SEOSection() {
               Dominate Google Rankings with Expert SEO Services
             </h2>
             <p className="text-muted-foreground text-sm sm:text-base md:text-lg mb-6 sm:mb-8 leading-relaxed">
-              Are you looking for dependable SEO support that produces the best results in your area? Our professional SEO services are designed to increase local and national search visibility, converting high-intent customers actively looking for solutions.
+              Are you looking for dependable SEO support that produces the best results in your area? Our professional SEO services are designed to increase local and national search visibility, converting high-intent customers actively looking for your business and related service and product keywords.
             </p>
 
             <ul className="space-y-2 sm:space-y-3 mb-6 sm:mb-8">
