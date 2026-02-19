@@ -9,7 +9,7 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "RankBoost | SEO, Web Development & Hosting Services",
+  title: "RankBoost | Africa's Top Digital Growth Partner",
   description: "Rank your business on Google's first page with our expert Digital Marketing services.",
   authors: [{ name: 'Sabe Investment Holdings (Pty) Ltd' }],
   keywords: [
@@ -77,7 +77,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-GKVD70ZN3Q'
-  
+
   return (
     <html lang="en">
       <head>
@@ -87,8 +87,8 @@ export default function RootLayout({
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
         />
         <script
-  dangerouslySetInnerHTML={{
-    __html: `
+          dangerouslySetInnerHTML={{
+            __html: `
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
@@ -106,23 +106,23 @@ export default function RootLayout({
       // Google Ads base tag
       gtag('config', 'AW-17934460660');
     `,
-  }}
-/>
-        
+          }}
+        />
+
         {/* Structured Data / JSON-LD */}
         <StructuredData />
-        
+
         {/* Canonical and Alternate URLs */}
         <link rel="canonical" href="https://www.rankboost.africa" />
         <link rel="alternate" href="https://rankboost.africa" hrefLang="en-ZA" />
         <link rel="alternate" href="https://www.rankboost.africa" hrefLang="x-default" />
-        
+
         {/* Geographic and Regional SEO */}
         <meta name="geo.region" content="ZA" />
         <meta name="geo.placename" content="South Africa" />
         <meta name="geo.position" content="-26.2041;28.0473" />
         <meta name="ICBM" content="-26.2041, 28.0473" />
-        
+
         {/* Core Web Vitals and Performance */}
         <meta name="theme-color" content="#1d4ed8" />
         <meta name="msapplication-TileColor" content="#1d4ed8" />
@@ -132,7 +132,7 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="apple-mobile-web-app-title" content="RankBoost Africa" />
-        
+
         {/* DNS Prefetch and Preconnect for Performance */}
         <meta httpEquiv="x-dns-prefetch-control" content="on" />
         <link rel="dns-prefetch" href="https://www.rankboost.africa" />
@@ -141,19 +141,19 @@ export default function RootLayout({
         <link rel="preconnect" href="https://www.rankboost.africa" />
         <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://www.google-analytics.com" crossOrigin="anonymous" />
-        
+
         {/* Security Headers */}
         <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
         <meta httpEquiv="X-Frame-Options" content="SAMEORIGIN" />
         <meta name="referrer" content="strict-origin-when-cross-origin" />
-        
+
         {/* Search Engine Directives */}
         <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         <meta name="bingbot" content="index, follow" />
         <meta name="revisit-after" content="7 days" />
         <meta name="rating" content="general" />
         <meta name="distribution" content="global" />
-        
+
         {/* Site Links Search Box */}
         <meta name="google" content="nositelinkssearchbox" />
         <meta name="google" content="notranslate" />
