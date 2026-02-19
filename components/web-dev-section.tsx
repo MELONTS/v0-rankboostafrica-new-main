@@ -47,9 +47,7 @@ export function WebDevSection() {
               Professional Web Development That Converts
             </h2>
             <p className="text-muted-foreground text-sm sm:text-base md:text-lg mb-6 sm:mb-8 leading-relaxed">
-              Build a powerful online presence with our custom website development services. We
-              create stunning, high-performance websites optimised for conversions and designed to
-              grow with your business.
+              Looking for a team that provides web development services in South Africa and across the globe? We build to help eCommerce brands achieve higher rankings, a better user experience, and measurable growth. We create high-performance Wordpress sites that are optimized for search, ensuring that your brand is discovered when customers are actively searching for your top queries in the area.
             </p>
 
             <ul className="space-y-2 sm:space-y-3 mb-6 sm:mb-8">
