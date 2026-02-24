@@ -1,5 +1,3 @@
-"use client"
-
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Search, Code, Server, FileText } from "lucide-react"
@@ -22,6 +20,9 @@ export function HeroSection() {
           fill
           className="object-cover"
           priority
+          fetchPriority="high"
+          sizes="100vw"
+          quality={75}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/80 to-background" />
       </div>
