@@ -23,13 +23,13 @@ export default function Home() {
         <ServicesOverview />
       </div>
       <ServicesTable />
+      <WhyChooseUs />
+      <RecentWorkCarousel />
       <SEOSection />
       <WebDevSection />
       <HostingSection />
       <ContentSection />
       <AboutSection />
-      <WhyChooseUs />
-      <RecentWorkCarousel />
       <CTASection />
       <Footer />
     </main>
