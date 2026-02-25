@@ -14,10 +14,10 @@ const stats = [
 
 export function AboutSection() {
   return (
-    <section id="about" className="py-12 sm:py-16 md:py-20 scroll-mt-16">
+    <section id="about" className="py-8 sm:py-10 md:py-12 scroll-mt-16">
       <div className="container mx-auto px-4 lg:px-8">
         {/* Top content */}
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-10 sm:mb-12 md:mb-16">
+        <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-center mb-8 sm:mb-10">
           {/* Image */}
           <div className="relative mb-6 lg:mb-0">
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl shadow-primary/10">
@@ -54,7 +54,7 @@ export function AboutSection() {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3 md:gap-4 lg:gap-6 mb-10 sm:mb-12">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3 md:gap-4 lg:gap-6 mb-8 sm:mb-10">
           {stats.map((stat) => (
             <InteractiveCard key={stat.label}>
               <div className="text-center p-3 sm:p-4 md:p-6 bg-card rounded-xl border border-border">

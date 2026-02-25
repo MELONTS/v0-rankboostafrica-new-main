@@ -41,9 +41,9 @@ const reasons = [
 
 export function WhyChooseUs() {
   return (
-    <section className="py-12 sm:py-16 md:py-20 bg-primary text-primary-foreground">
+    <section className="py-8 sm:py-10 md:py-12 bg-primary text-primary-foreground">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="text-center mb-8 sm:mb-10 md:mb-12">
+        <div className="text-center mb-6 sm:mb-7 md:mb-8">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 text-balance">
             Why Choose RankBoost Africa?
           </h2>

@@ -262,7 +262,7 @@ export function ServicesTable() {
   return (
     <section 
       id="services-comparison" 
-      className="py-10 sm:py-14 md:py-16 lg:py-20 scroll-mt-16 will-change-scroll"
+      className="py-8 sm:py-10 md:py-12 scroll-mt-16 will-change-scroll"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         {/* Section Header */}

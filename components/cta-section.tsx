@@ -41,19 +41,19 @@ const serviceLinks = [
 
 export function CTASection() {
   return (
-    <section className="py-12 sm:py-16 md:py-20">
+    <section className="py-8 sm:py-10 md:py-12">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 md:mb-6 text-balance">
             Ready to Rank  <span className="text-primary">Number One</span>?
           </h2>
-          <p className="text-muted-foreground text-sm sm:text-base md:text-lg mb-6 sm:mb-8 md:mb-10 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-muted-foreground text-sm sm:text-base md:text-lg mb-5 sm:mb-6 md:mb-8 max-w-2xl mx-auto leading-relaxed">
             Get in touch with our team today and discover how we can help grow your business on Google search by ranking on the first page for your service queries and
             keywords with our expert digital marketing services.
           </p>
 
           {/* Main CTA */}
-          <div className="mb-8 sm:mb-10 md:mb-12">
+          <div className="mb-6 sm:mb-8">
             <ContactForm
               trigger={
                 <Button size="lg" className="text-sm sm:text-base px-8 sm:px-10 md:px-12 group">
@@ -65,7 +65,7 @@ export function CTASection() {
           </div>
 
           {/* Service-Specific Links */}
-          <div className="border-t border-border pt-8 sm:pt-10 md:pt-12">
+          <div className="border-t border-border pt-6 sm:pt-8">
             <p className="text-xs sm:text-sm text-muted-foreground mb-5 sm:mb-6 md:mb-8">
               Or reach out for a specific service:
             </p>
