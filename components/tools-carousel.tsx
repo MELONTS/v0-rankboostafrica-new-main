@@ -1,8 +1,10 @@
 "use client"
 
+import Image from "next/image"
+
 interface Tool {
   name: string
-  logo: React.ReactNode
+  src: string
 }
 
 interface ToolsCarouselProps {
@@ -11,16 +13,17 @@ interface ToolsCarouselProps {
 }
 
 export function ToolsCarousel({ tools, label }: ToolsCarouselProps) {
-  // Duplicate list for seamless loop -- each tool appears exactly once per copy
+  /* Duplicate the list once for seamless CSS loop -- each tool appears only once per half */
   const items = [...tools, ...tools]
 
   return (
     <div className="w-full overflow-hidden py-6 sm:py-8">
       {label && (
-        <p className="text-center text-xs sm:text-sm text-muted-foreground mb-4 sm:mb-5 tracking-wide uppercase font-medium">
+        <p className="text-center text-xs sm:text-sm text-muted-foreground mb-5 sm:mb-6 tracking-wide uppercase font-medium">
           {label}
         </p>
       )}
+
       <div className="relative mx-auto max-w-5xl">
         {/* Gradient fade edges */}
         <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-20 z-10 bg-gradient-to-r from-background to-transparent pointer-events-none" />
@@ -28,20 +31,22 @@ export function ToolsCarousel({ tools, label }: ToolsCarouselProps) {
 
         <div className="flex items-center justify-center">
           <div
-            className="flex items-center gap-10 sm:gap-14 md:gap-16 animate-scroll-left"
+            className="flex items-center gap-12 sm:gap-16 md:gap-20 animate-scroll-left"
             style={{ width: "max-content" }}
           >
             {items.map((tool, i) => (
               <div
                 key={`${tool.name}-${i}`}
-                className="flex flex-col items-center gap-2 sm:gap-2.5 flex-shrink-0"
+                className="relative flex-shrink-0 h-6 sm:h-8 md:h-9 w-24 sm:w-32 md:w-36 opacity-70 hover:opacity-100 transition-opacity duration-300"
               >
-                <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity duration-300">
-                  {tool.logo}
-                </div>
-                <span className="text-[10px] sm:text-xs text-muted-foreground font-medium whitespace-nowrap">
-                  {tool.name}
-                </span>
+                <Image
+                  src={tool.src}
+                  alt={`${tool.name} logo`}
+                  fill
+                  className="object-contain"
+                  sizes="(max-width: 640px) 96px, (max-width: 768px) 128px, 144px"
+                  loading="lazy"
+                />
               </div>
             ))}
           </div>
@@ -51,67 +56,13 @@ export function ToolsCarousel({ tools, label }: ToolsCarouselProps) {
   )
 }
 
-const sz = "w-full h-full"
-
 /* ─────────────── Web Dev Platform Logos ─────────────── */
 
 export const webDevTools: Tool[] = [
-  {
-    name: "WordPress",
-    logo: (
-      <svg viewBox="0 0 512 512" className={sz} aria-hidden="true">
-        <circle cx="256" cy="256" r="240" fill="#21759B" />
-        <path d="M41 256c0 84.4 49 157.2 120 191.6L55.2 180.8C46 203.6 41 229 41 256zm380.4-22.4c0-26.4-9.6-44.8-17.6-59.2-10.8-17.6-21.2-32.4-21.2-50 0-19.6 14.8-37.8 35.8-37.8.9 0 1.8.1 2.8.2C384.4 55 322.4 32 256 32c-88.8 0-167 45.6-212.4 114.6 6 .2 11.6.3 16.2.3 26.4 0 67.2-3.2 67.2-3.2 13.6-.8 15.2 19.2 1.6 20.8 0 0-13.6 1.6-28.8 2.4L209.2 444l56-167.6L235 200.8c-13.6-.8-26.4-2.4-26.4-2.4-13.6-.8-12-21.6 1.6-20.8 0 0 41.6 3.2 66.4 3.2 26.4 0 67.2-3.2 67.2-3.2 13.6-.8 15.2 19.2 1.6 20.8 0 0-13.6 1.6-28.8 2.4l108 321.6 30-99.6c12.8-41.2 22.8-70.8 22.8-96.2z" fill="#fff" />
-      </svg>
-    ),
-  },
-  {
-    name: "Shopify",
-    logo: (
-      <svg viewBox="0 0 512 512" className={sz} aria-hidden="true">
-        <path d="M380.8 100.8c-.4-2.8-2.8-4.4-4.8-4.4-2 0-41.2-3.2-41.2-3.2s-27.2-26.8-30.4-30c-3.2-3.2-9.2-2-11.6-1.6-0.4 0-6 1.8-16 4.8-9.6-27.6-26.4-52.8-56-52.8h-2.4C209.2 2 197.2 0 186.8 0c-70.4 0-104 88-114.4 132.8l-49.2 15.2c-15.2 4.8-15.6 5.2-17.6 19.6C4 180.4-32 452 -32 452l303.2 52.4L416 468s-35.2-364.4-35.2-367.2zM280 78l-20.4 6.4c0-4-.4-9.2-1.2-14.8 12 2.4 20 9.2 21.6 8.4zm-38 12l-44 13.6c4.4-16.4 12.4-32.8 28.4-43.6 6 3.2 15.2 12.8 15.6 30zm-26-58.4c2.8 0 5.2.8 7.6 2.4-26.8 12.8-55.6 44.8-67.6 109.2l-34.8 10.8C131.2 112.8 158 31.6 216 31.6z" fill="#95BF47" />
-        <path d="M376 96.4c-2 0-41.2-3.2-41.2-3.2s-27.2-26.8-30.4-30c-1.2-1.2-2.8-1.6-4.4-2L272 504.4 416 468s-35.2-364.4-35.2-367.2c-.4-2.8-2.8-4.4-4.8-4.4z" fill="#5E8E3E" />
-        <path d="M257.2 176l-19.6 58.4s-17.2-9.2-38.4-9.2c-30.8 0-32.4 19.6-32.4 24.4 0 26.8 69.6 37.2 69.6 100.4 0 49.6-31.6 81.6-74 81.6-51.2 0-77.2-31.6-77.2-31.6l13.6-45.2s27.2 23.2 49.6 23.2c14.8 0 20.8-11.6 20.8-20 0-35.2-57.2-36.8-57.2-94.4 0-48.4 34.8-95.6 105.2-95.6 27.2 0 40 7.6 40 7.6z" fill="#fff" />
-      </svg>
-    ),
-  },
-  {
-    name: "Next.js",
-    logo: (
-      <svg viewBox="0 0 512 512" className={sz} aria-hidden="true">
-        <circle cx="256" cy="256" r="240" fill="#000" />
-        <path d="M200 160v192M200 160l168 232" stroke="#fff" strokeWidth="32" strokeLinecap="round" strokeLinejoin="round" />
-        <rect x="312" y="160" width="0" height="128" stroke="#fff" strokeWidth="32" strokeLinecap="round">
-          <animate attributeName="height" from="0" to="128" dur="0.01s" fill="freeze" />
-        </rect>
-        <line x1="312" y1="160" x2="312" y2="288" stroke="#fff" strokeWidth="32" strokeLinecap="round" />
-      </svg>
-    ),
-  },
-  {
-    name: "React",
-    logo: (
-      <svg viewBox="0 0 512 512" className={sz} aria-hidden="true">
-        <circle cx="256" cy="256" r="240" fill="#20232A" />
-        <g stroke="#61DAFB" strokeWidth="12" fill="none">
-          <ellipse cx="256" cy="256" rx="144" ry="56" />
-          <ellipse cx="256" cy="256" rx="144" ry="56" transform="rotate(60 256 256)" />
-          <ellipse cx="256" cy="256" rx="144" ry="56" transform="rotate(120 256 256)" />
-        </g>
-        <circle cx="256" cy="256" r="20" fill="#61DAFB" />
-      </svg>
-    ),
-  },
-  {
-    name: "WooCommerce",
-    logo: (
-      <svg viewBox="0 0 512 512" className={sz} aria-hidden="true">
-        <rect width="512" height="512" rx="80" fill="#7F54B3" />
-        <path d="M88 152c0-17.6 14.4-32 32-32h272c17.6 0 32 14.4 32 32v160c0 17.6-14.4 32-32 32H280l-48 48-48-48H120c-17.6 0-32-14.4-32-32V152z" fill="#fff" />
-        <circle cx="188" cy="224" r="20" fill="#7F54B3" />
-        <circle cx="268" cy="224" r="20" fill="#7F54B3" />
-        <path d="M336 200c0 0 4 48-16 48s-16-48-16-48" stroke="#7F54B3" strokeWidth="12" strokeLinecap="round" fill="none" />
-      </svg>
-    ),
-  },
+  { name: "Shopify",     src: "/logos/shopify.png" },
+  { name: "Next.js",     src: "/logos/nextjs.png" },
+  { name: "React",       src: "/logos/react.png" },
+  { name: "WooCommerce", src: "/logos/woocommerce.png" },
+  { name: "WordPress",   src: "/logos/wordpress.png" },
+  { name: "Webflow",     src: "/logos/webflow.png" },
 ]
