@@ -23,10 +23,11 @@ export function ContentSection() {
           <div className="relative order-2 lg:order-1 mt-8 lg:mt-0">
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl shadow-primary/10">
               <Image
-                src="/images/content-marketing.jpg"
-                alt="Content marketing strategy and digital analytics workspace"
+                src="/images/content-marketing-team.jpg"
+                alt="Creative marketing team collaborating on content strategy with editorial calendars and audience analytics on whiteboard"
                 fill
                 className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
             {/* Floating Stats Card */}

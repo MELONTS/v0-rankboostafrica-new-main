@@ -12,12 +12,6 @@ const stats = [
   { value: "50+", label: "Service Retainers" },
 ]
 
-const projects = [
-  { name: "E-commerce Growth", industry: "Retail", result: "250% Revenue Increase" },
-  { name: "Local SEO Campaign", industry: "Search", result: "Top 3 Google Rankings" },
-  { name: "Brand Website Launch", industry: "Technology", result: "10K Monthly Visitors" },
-]
-
 export function AboutSection() {
   return (
     <section id="about" className="py-12 sm:py-16 md:py-20 scroll-mt-16">
@@ -28,10 +22,11 @@ export function AboutSection() {
           <div className="relative mb-6 lg:mb-0">
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl shadow-primary/10">
               <Image
-                src="/images/team.jpg"
-                alt="RankBoost Africa digital marketing team"
+                src="/images/rankboost-team.jpg"
+                alt="RankBoost Africa digital marketing team reviewing a website redesign in a modern South African office"
                 fill
                 className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
           </div>
@@ -71,30 +66,6 @@ export function AboutSection() {
               </div>
             </InteractiveCard>
           ))}
-        </div>
-
-        {/* Projects */}
-        <div className="mb-8 sm:mb-10">
-          <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-4 sm:mb-6 text-center">
-            Featured Project Results
-          </h3>
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
-            {projects.map((project) => (
-              <InteractiveCard key={project.name}>
-                <div className="p-4 sm:p-5 bg-card rounded-xl border border-border hover:border-primary/50 transition-all">
-                  <div className="text-xs sm:text-sm text-primary font-semibold mb-1">
-                    {project.industry}
-                  </div>
-                  <h4 className="text-base sm:text-lg font-semibold mb-1">
-                    {project.name}
-                  </h4>
-                  <div className="text-muted-foreground text-sm">
-                    {project.result}
-                  </div>
-                </div>
-              </InteractiveCard>
-            ))}
-          </div>
         </div>
 
         {/* FAQs – tight spacing */}

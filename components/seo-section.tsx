@@ -28,7 +28,7 @@ export function SEOSection() {
               Dominate Google Rankings with Expert SEO Services
             </h2>
             <p className="text-muted-foreground text-sm sm:text-base md:text-lg mb-6 sm:mb-8 leading-relaxed">
-              Are you looking for dependable SEO support that produces the best results in your area? Our professional SEO services are designed to increase local and national search visibility, converting high-intent customers actively looking for solutions.
+              Are you looking for dependable SEO support that produces the best results in your area? Our professional SEO services are designed to increase local and national search visibility, converting high-intent customers actively looking for your business and related service and product keywords.
             </p>
 
             <ul className="space-y-2 sm:space-y-3 mb-6 sm:mb-8">
@@ -70,10 +70,11 @@ Thank you!"
           <div className="relative mt-8 lg:mt-0">
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl shadow-primary/10">
               <Image
-                src="/images/seo-services.jpg"
-                alt="SEO analytics dashboard showing organic traffic growth and search rankings"
+                src="/images/seo-analysis-dashboard.jpg"
+                alt="Digital marketing professional analysing SEO keyword rankings and organic traffic data on an ultrawide monitor"
                 fill
                 className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
             {/* Floating Stats Card */}

@@ -23,10 +23,11 @@ export function WebDevSection() {
           <div className="relative order-2 lg:order-1 mt-8 lg:mt-0">
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl shadow-primary/10">
               <Image
-                src="/images/web-development.jpg"
-                alt="Modern web development workspace with responsive website designs"
+                src="/images/web-development-workspace.jpg"
+                alt="Professional web developer dual-monitor setup showing code editor and responsive website preview"
                 fill
                 className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
             {/* Floating Stats Card */}

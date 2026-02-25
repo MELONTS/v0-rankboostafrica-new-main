@@ -8,6 +8,7 @@ import { HostingSection } from "@/components/hosting-section"
 import { ContentSection } from "@/components/content-section"
 import { AboutSection } from "@/components/about-section"
 import { WhyChooseUs } from "@/components/why-choose-us"
+import { RecentWorkCarousel } from "@/components/recent-work-carousel"
 import { CTASection } from "@/components/cta-section"
 import { Footer } from "@/components/footer"
 import { ScrollProgress } from "@/components/scroll-progress"
@@ -22,12 +23,13 @@ export default function Home() {
         <ServicesOverview />
       </div>
       <ServicesTable />
+      <WhyChooseUs />
+      <RecentWorkCarousel />
       <SEOSection />
       <WebDevSection />
       <HostingSection />
       <ContentSection />
       <AboutSection />
-      <WhyChooseUs />
       <CTASection />
       <Footer />
     </main>

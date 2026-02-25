@@ -70,10 +70,11 @@ Thank you!"
           <div className="relative mt-8 lg:mt-0">
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl shadow-primary/10">
               <Image
-                src="/images/web-hosting.jpg"
-                alt="Secure data center with server infrastructure"
+                src="/images/secure-server-room.jpg"
+                alt="Premium secure server room with glass-enclosed racks, fibre optic cables, and real-time uptime monitoring dashboard"
                 fill
                 className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
             {/* Floating Stats Card */}

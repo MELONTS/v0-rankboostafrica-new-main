@@ -81,6 +81,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Preload LCP hero image for fast discovery */}
+        <link
+          rel="preload"
+          as="image"
+          href="/images/hero-bg.jpg"
+          fetchPriority="high"
+        />
+
         {/* Google Analytics 4 */}
         <script
           async

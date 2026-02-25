@@ -45,7 +45,10 @@ export function StructuredData() {
         availableLanguage: ["English"],
       },
     ],
-    sameAs: [],
+    sameAs: [
+      "https://www.instagram.com/sabeconnect/",
+      "https://www.facebook.com/sabeconnect/",
+    ],
   }
 
   // LocalBusiness Schema
@@ -89,7 +92,10 @@ const localBusinessSchema = {
     },
   ],
 
-  sameAs: [],
+  sameAs: [
+    "https://www.instagram.com/sabeconnect/",
+    "https://www.facebook.com/sabeconnect/",
+  ],
 
   geo: {
     "@type": "GeoCoordinates",
@@ -402,37 +408,19 @@ const localBusinessSchema = {
         "@type": "ListItem",
         position: 2,
         name: "Services",
-        item: `${baseUrl}/#services`,
+        item: `${baseUrl}/services`,
       },
       {
         "@type": "ListItem",
         position: 3,
-        name: "SEO Services",
-        item: `${baseUrl}/#seo`,
+        name: "About Us",
+        item: `${baseUrl}/about`,
       },
       {
         "@type": "ListItem",
         position: 4,
-        name: "Web Development",
-        item: `${baseUrl}/#web-development`,
-      },
-      {
-        "@type": "ListItem",
-        position: 5,
-        name: "Web Hosting",
-        item: `${baseUrl}/#hosting`,
-      },
-      {
-        "@type": "ListItem",
-        position: 6,
-        name: "Content Marketing",
-        item: `${baseUrl}/#content`,
-      },
-      {
-        "@type": "ListItem",
-        position: 7,
-        name: "About Us",
-        item: `${baseUrl}/#about`,
+        name: "Contact",
+        item: `${baseUrl}/contact`,
       },
     ],
   }

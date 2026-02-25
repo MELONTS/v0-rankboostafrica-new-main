@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Mail, MapPin } from "lucide-react"
+import { Mail, MapPin, Instagram } from "lucide-react"
 import { Logo } from "@/components/logo"
 
 const serviceLinks = [
@@ -53,7 +53,7 @@ export function Footer() {
             <ul className="space-y-2 sm:space-y-3">
               <li>
                 <Link
-                  href="#about"
+                  href="/about"
                   className="text-background/70 hover:text-primary transition-colors text-sm"
                 >
                   About Us
@@ -61,19 +61,19 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="#services"
+                  href="/services"
                   className="text-background/70 hover:text-primary transition-colors text-sm"
                 >
                   Our Services
                 </Link>
               </li>
               <li>
-                <a
-                  href="mailto:info@rankboost.africa"
+                <Link
+                  href="/contact"
                   className="text-background/70 hover:text-primary transition-colors text-sm"
                 >
                   Contact Us
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -109,10 +109,42 @@ export function Footer() {
           <p className="text-background/50 text-xs sm:text-sm text-center md:text-left">
             © {new Date().getFullYear()} RankBoost Africa. All rights reserved.
           </p>
-          <div className="flex items-center">
+          <div className="flex items-center gap-4">
             <span className="text-background/50 text-xs sm:text-sm text-center md:text-right">
               Digital Marketing | SEO | Web Development | Hosting
             </span>
+            <div className="flex items-center gap-2">
+              <a
+                href="https://www.instagram.com/sabeconnect/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Follow RankBoost Africa on Instagram"
+                className="text-background/50 hover:text-primary transition-colors"
+              >
+                <Instagram className="w-4 h-4 sm:w-5 sm:h-5" />
+              </a>
+              <a
+                href="https://www.facebook.com/sabeconnect/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Follow RankBoost Africa on Facebook"
+                className="text-background/50 hover:text-primary transition-colors"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="w-4 h-4 sm:w-5 sm:h-5"
+                  aria-hidden="true"
+                >
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
       </div>

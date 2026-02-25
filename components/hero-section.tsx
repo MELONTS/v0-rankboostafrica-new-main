@@ -1,5 +1,3 @@
-"use client"
-
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Search, Code, Server, FileText } from "lucide-react"
@@ -8,11 +6,11 @@ import { ContactForm } from "@/components/contact-form"
 export function HeroSection() {
   return (
     <section
-      className="relative min-h-[85vh] sm:min-h-[90vh] lg:min-h-screen flex items-center justify-center overflow-hidden
-      pt-14 pb-10
-      sm:pt-16 sm:pb-12
-      md:pt-20 md:pb-16
-      lg:pt-24 lg:pb-20"
+      className="relative min-h-[70vh] sm:min-h-[75vh] lg:min-h-[82vh] flex items-center justify-center overflow-hidden
+      pt-14 pb-6
+      sm:pt-16 sm:pb-8
+      md:pt-20 md:pb-10
+      lg:pt-24 lg:pb-12"
     >
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
@@ -22,6 +20,9 @@ export function HeroSection() {
           fill
           className="object-cover"
           priority
+          fetchPriority="high"
+          sizes="100vw"
+          quality={75}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/80 to-background" />
       </div>
@@ -35,7 +36,7 @@ export function HeroSection() {
       {/* ✅ UPDATED CONTAINER PADDING */}
       <div
         className="container mx-auto px-4 sm:px-6 lg:px-8
-        py-6 sm:py-8 md:py-10 lg:py-12
+        py-4 sm:py-6 md:py-8 lg:py-10
         relative z-10"
       >
         <div className="max-w-4xl mx-auto text-center">
