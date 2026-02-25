@@ -28,6 +28,7 @@ export function ContentSection() {
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
+                loading="lazy"
               />
             </div>
             {/* Floating Stats Card */}
