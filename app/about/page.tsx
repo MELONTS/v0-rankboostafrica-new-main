@@ -127,10 +127,7 @@ export default function AboutPage() {
                 About RankBoost Africa
               </h1>
               <p className="text-muted-foreground text-sm sm:text-base md:text-lg leading-relaxed mb-4">
-                RankBoost Africa is a proudly South African digital marketing agency founded by Sabe
-                Investment Holdings (Pty) Ltd. We specialise in helping SMEs, e-commerce brands, and
-                government institutions build and grow their online presence through data-driven
-                strategies that deliver real results.
+                RankBoost Africa Powered by Sabeconnect is a proudly South African digital marketing agency founded by Sabe Investment Holdings (Pty) Ltd. We specialise in helping SMEs, e-commerce brands, schools, blogs and government institutions build and grow their online presence through data-driven strategies that deliver real results.
               </p>
               <p className="text-muted-foreground text-sm sm:text-base md:text-lg leading-relaxed">
                 From search engine optimisation and high-performance web development to secure hosting
@@ -160,14 +157,14 @@ export default function AboutPage() {
             Our Mission
           </h2>
           <p className="text-muted-foreground text-sm sm:text-base md:text-lg leading-relaxed mb-4">
-            To empower South African businesses with affordable, world-class digital marketing
-            solutions that level the playing field against larger competitors. We believe every SME
+            To empower South African startup businesses with affordable, world-class digital marketing
+            solutions that level the playing field against larger competitors. We believe every client
             deserves access to the same calibre of SEO, web development, and content strategy that
             enterprise-level companies enjoy.
           </p>
           <p className="text-muted-foreground text-sm sm:text-base md:text-lg leading-relaxed">
             Our approach is simple: understand your business goals, build a strategy rooted in data,
-            execute with precision, and measure everything. We do not chase vanity metrics -- we
+            execute with precision, and measure everything. We do not chase vanity metrics - we
             chase revenue, leads, and growth.
           </p>
         </div>
