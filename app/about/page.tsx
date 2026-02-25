@@ -116,9 +116,9 @@ export default function AboutPage() {
       </div>
 
       {/* Hero */}
-      <section className="py-12 sm:py-16 md:py-20 bg-secondary/30">
+      <section className="pt-4 pb-6 sm:pt-6 sm:pb-8 md:pt-8 md:pb-10 bg-secondary/30">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-center">
             <div>
               <span className="text-primary font-semibold text-xs sm:text-sm tracking-wide uppercase mb-2 sm:mb-3 block">
                 About Our Agency
@@ -151,7 +151,7 @@ export default function AboutPage() {
       </section>
 
       {/* Mission */}
-      <section className="py-12 sm:py-16 md:py-20">
+      <section className="py-8 sm:py-10 md:py-12">
         <div className="container mx-auto px-4 lg:px-8 max-w-3xl text-center">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 text-balance">
             Our Mission
@@ -172,9 +172,9 @@ export default function AboutPage() {
       </section>
 
       {/* Values */}
-      <section className="py-12 sm:py-16 md:py-20 bg-secondary/30">
+      <section className="py-8 sm:py-10 md:py-12 bg-secondary/30">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="text-center mb-8 sm:mb-10 md:mb-12">
+          <div className="text-center mb-6 sm:mb-8">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 text-balance">
               Our Core Values
             </h2>
@@ -202,7 +202,7 @@ export default function AboutPage() {
       </section>
 
       {/* South African Focus */}
-      <section className="py-12 sm:py-16 md:py-20">
+      <section className="py-8 sm:py-10 md:py-12">
         <div className="container mx-auto px-4 lg:px-8 max-w-3xl text-center">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 text-balance">
             Proudly South African

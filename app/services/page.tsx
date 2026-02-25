@@ -241,7 +241,7 @@ export default function ServicesPage() {
       </div>
 
       {/* Hero */}
-      <section className="py-12 sm:py-16 md:py-20 bg-secondary/30">
+      <section className="pt-4 pb-6 sm:pt-6 sm:pb-8 md:pt-8 md:pb-10 bg-secondary/30">
         <div className="container mx-auto px-4 lg:px-8 max-w-3xl text-center">
           <span className="text-primary font-semibold text-xs sm:text-sm tracking-wide uppercase mb-2 sm:mb-3 block">
             What We Offer
@@ -262,13 +262,13 @@ export default function ServicesPage() {
         <section
           key={service.id}
           id={service.id}
-          className={`py-12 sm:py-16 md:py-20 scroll-mt-16 ${index % 2 === 1 ? "bg-secondary/30" : ""
+          className={`py-8 sm:py-10 md:py-12 scroll-mt-16 ${index % 2 === 1 ? "bg-secondary/30" : ""
             }`}
         >
           <div className="container mx-auto px-4 lg:px-8">
             {/* Service Header */}
             <div
-              className={`grid lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-8 sm:mb-10 md:mb-12 ${index % 2 === 1 ? "lg:grid-flow-dense" : ""
+              className={`grid lg:grid-cols-2 gap-6 lg:gap-12 items-center mb-6 sm:mb-8 ${index % 2 === 1 ? "lg:grid-flow-dense" : ""
                 }`}
             >
               <div className={index % 2 === 1 ? "lg:col-start-2" : ""}>
@@ -355,7 +355,7 @@ export default function ServicesPage() {
       ))}
 
       {/* CTA */}
-      <section className="py-12 sm:py-16 md:py-20 bg-primary text-primary-foreground">
+      <section className="py-8 sm:py-10 md:py-12 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 lg:px-8 max-w-3xl text-center">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 text-balance">
             Ready to Get Started?
