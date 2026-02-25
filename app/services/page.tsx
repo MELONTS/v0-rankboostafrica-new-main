@@ -278,9 +278,32 @@ export default function ServicesPage() {
                   </div>
                   <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">{service.title}</h2>
                 </div>
-                <p className="text-muted-foreground text-sm sm:text-base md:text-lg leading-relaxed mb-5">
+                <p className="text-muted-foreground text-sm sm:text-base md:text-lg leading-relaxed mb-3">
                   {service.description}
                 </p>
+                {service.id === "seo" && (
+                  <p className="text-muted-foreground text-sm sm:text-base leading-relaxed mb-5">
+                    Our <Link href="/about" className="text-primary hover:underline">experienced team</Link> uses industry-leading tools like Google Search Console, SEMrush, and Ahrefs to deliver measurable results for every campaign. Need help right away? <Link href="/contact" className="text-primary hover:underline">Reach out to our SEO specialists</Link>.
+                  </p>
+                )}
+                {service.id === "web-development" && (
+                  <p className="text-muted-foreground text-sm sm:text-base leading-relaxed mb-5">
+                    Every website we build is designed with <Link href="/services#seo" className="text-primary hover:underline">SEO best practices</Link> baked in from the start, ensuring strong search visibility from day one. Paired with our <Link href="/services#hosting" className="text-primary hover:underline">managed hosting solutions</Link>, your site stays fast and secure.
+                  </p>
+                )}
+                {service.id === "hosting" && (
+                  <p className="text-muted-foreground text-sm sm:text-base leading-relaxed mb-5">
+                    Our hosting infrastructure is optimised to support the <Link href="/services#web-development" className="text-primary hover:underline">high-performance websites we build</Link>, giving you a seamless experience from development to deployment. <Link href="/contact" className="text-primary hover:underline">Contact us</Link> for a hosting assessment.
+                  </p>
+                )}
+                {service.id === "content" && (
+                  <p className="text-muted-foreground text-sm sm:text-base leading-relaxed mb-5">
+                    Our content marketing works hand in hand with our <Link href="/services#seo" className="text-primary hover:underline">SEO services</Link> to maximise your organic reach and search engine authority. <Link href="/about" className="text-primary hover:underline">Learn about our data-driven approach</Link> to content strategy.
+                  </p>
+                )}
+                {!["seo", "web-development", "hosting", "content"].includes(service.id) && (
+                  <div className="mb-5" />
+                )}
                 <ul className="space-y-2 mb-6">
                   {service.highlights.map((highlight) => (
                     <li key={highlight} className="flex items-center gap-2.5 text-sm sm:text-base">

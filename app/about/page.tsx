@@ -159,13 +159,14 @@ export default function AboutPage() {
           <p className="text-muted-foreground text-sm sm:text-base md:text-lg leading-relaxed mb-4">
             To empower South African startup businesses with affordable, world-class digital marketing
             solutions that level the playing field against larger competitors. We believe every client
-            deserves access to the same calibre of SEO, web development, and content strategy that
+            deserves access to the same calibre of <Link href="/services#seo" className="text-primary hover:underline">SEO</Link>, <Link href="/services#web-development" className="text-primary hover:underline">web development</Link>, and <Link href="/services#content" className="text-primary hover:underline">content strategy</Link> that
             enterprise-level companies enjoy.
           </p>
           <p className="text-muted-foreground text-sm sm:text-base md:text-lg leading-relaxed">
             Our approach is simple: understand your business goals, build a strategy rooted in data,
             execute with precision, and measure everything. We do not chase vanity metrics - we
-            chase revenue, leads, and growth.
+            chase revenue, leads, and growth. <Link href="/contact" className="text-primary hover:underline">Get in touch</Link> to
+            see how we can help your business grow.
           </p>
         </div>
       </section>
@@ -209,12 +210,14 @@ export default function AboutPage() {
           <p className="text-muted-foreground text-sm sm:text-base md:text-lg leading-relaxed mb-4">
             Being based in South Africa gives us a deep understanding of the local market dynamics,
             consumer behaviour, and competitive landscape. We know what it takes to rank on Google
-            for South African search queries because we live and breathe this market every day.
+            for South African search queries because we live and breathe this market every day. Explore our <Link href="/services" className="text-primary hover:underline">full range of digital marketing services</Link> to
+            see our approach in action.
           </p>
           <p className="text-muted-foreground text-sm sm:text-base md:text-lg leading-relaxed">
             Whether you are a Cape Town startup, a Johannesburg e-commerce store, or a government
             agency looking to improve your digital services, RankBoost Africa has the local
-            expertise and global best practices to help you succeed.
+            expertise and global best practices to help you succeed. Ready to start? <Link href="/contact" className="text-primary hover:underline">Contact our team</Link> for
+            a free consultation.
           </p>
         </div>
       </section>
