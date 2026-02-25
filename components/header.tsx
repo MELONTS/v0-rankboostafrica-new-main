@@ -9,12 +9,13 @@ import { Logo } from "@/components/logo"
 import { ContactForm } from "@/components/contact-form"
 
 const navLinks = [
-  { href: "#services", label: "Digital Market" },
-  { href: "#seo", label: "Search" },
-  { href: "#web-development", label: "Web Development" },
+  { href: "/services", label: "Services" },
+  { href: "#seo", label: "SEO" },
+  { href: "#web-development", label: "Web Dev" },
   { href: "#hosting", label: "Hosting" },
   { href: "#content", label: "Content" },
-  { href: "#about", label: "About" },
+  { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" },
 ]
 
 export function Header() {
