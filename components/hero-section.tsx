@@ -16,7 +16,7 @@ export function HeroSection() {
       <div className="absolute inset-0 z-0">
         <Image
           src="/images/hero-bg.jpg"
-          alt="Digital marketing network visualization"
+          alt="Digital marketing agency workspace showing SEO analytics dashboards and Google Search Console data on multiple screens"
           fill
           className="object-cover"
           priority

@@ -241,7 +241,7 @@ export default function ServicesPage() {
       </div>
 
       {/* Hero */}
-      <section className="py-12 sm:py-16 md:py-20 bg-secondary/30">
+      <section className="pt-4 pb-6 sm:pt-6 sm:pb-8 md:pt-8 md:pb-10 bg-secondary/30">
         <div className="container mx-auto px-4 lg:px-8 max-w-3xl text-center">
           <span className="text-primary font-semibold text-xs sm:text-sm tracking-wide uppercase mb-2 sm:mb-3 block">
             What We Offer
@@ -262,13 +262,13 @@ export default function ServicesPage() {
         <section
           key={service.id}
           id={service.id}
-          className={`py-12 sm:py-16 md:py-20 scroll-mt-16 ${index % 2 === 1 ? "bg-secondary/30" : ""
+          className={`py-8 sm:py-10 md:py-12 scroll-mt-16 ${index % 2 === 1 ? "bg-secondary/30" : ""
             }`}
         >
           <div className="container mx-auto px-4 lg:px-8">
             {/* Service Header */}
             <div
-              className={`grid lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-8 sm:mb-10 md:mb-12 ${index % 2 === 1 ? "lg:grid-flow-dense" : ""
+              className={`grid lg:grid-cols-2 gap-6 lg:gap-12 items-center mb-6 sm:mb-8 ${index % 2 === 1 ? "lg:grid-flow-dense" : ""
                 }`}
             >
               <div className={index % 2 === 1 ? "lg:col-start-2" : ""}>
@@ -278,9 +278,32 @@ export default function ServicesPage() {
                   </div>
                   <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">{service.title}</h2>
                 </div>
-                <p className="text-muted-foreground text-sm sm:text-base md:text-lg leading-relaxed mb-5">
+                <p className="text-muted-foreground text-sm sm:text-base md:text-lg leading-relaxed mb-3">
                   {service.description}
                 </p>
+                {service.id === "seo" && (
+                  <p className="text-muted-foreground text-sm sm:text-base leading-relaxed mb-5">
+                    Our <Link href="/about" className="text-primary hover:underline">experienced team</Link> uses industry-leading tools like Google Search Console, SEMrush, and Ahrefs to deliver measurable results for every campaign. Need help right away? <Link href="/contact" className="text-primary hover:underline">Reach out to our SEO specialists</Link>.
+                  </p>
+                )}
+                {service.id === "web-development" && (
+                  <p className="text-muted-foreground text-sm sm:text-base leading-relaxed mb-5">
+                    Every website we build is designed with <Link href="/services#seo" className="text-primary hover:underline">SEO best practices</Link> baked in from the start, ensuring strong search visibility from day one. Paired with our <Link href="/services#hosting" className="text-primary hover:underline">managed hosting solutions</Link>, your site stays fast and secure.
+                  </p>
+                )}
+                {service.id === "hosting" && (
+                  <p className="text-muted-foreground text-sm sm:text-base leading-relaxed mb-5">
+                    Our hosting infrastructure is optimised to support the <Link href="/services#web-development" className="text-primary hover:underline">high-performance websites we build</Link>, giving you a seamless experience from development to deployment. <Link href="/contact" className="text-primary hover:underline">Contact us</Link> for a hosting assessment.
+                  </p>
+                )}
+                {service.id === "content" && (
+                  <p className="text-muted-foreground text-sm sm:text-base leading-relaxed mb-5">
+                    Our content marketing works hand in hand with our <Link href="/services#seo" className="text-primary hover:underline">SEO services</Link> to maximise your organic reach and search engine authority. <Link href="/about" className="text-primary hover:underline">Learn about our data-driven approach</Link> to content strategy.
+                  </p>
+                )}
+                {!["seo", "web-development", "hosting", "content"].includes(service.id) && (
+                  <div className="mb-5" />
+                )}
                 <ul className="space-y-2 mb-6">
                   {service.highlights.map((highlight) => (
                     <li key={highlight} className="flex items-center gap-2.5 text-sm sm:text-base">
@@ -332,7 +355,7 @@ export default function ServicesPage() {
       ))}
 
       {/* CTA */}
-      <section className="py-12 sm:py-16 md:py-20 bg-primary text-primary-foreground">
+      <section className="py-8 sm:py-10 md:py-12 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 lg:px-8 max-w-3xl text-center">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 text-balance">
             Ready to Get Started?

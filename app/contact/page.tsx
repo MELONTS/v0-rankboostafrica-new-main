@@ -137,9 +137,8 @@ export default function ContactPage() {
                 How to Reach Us
               </h2>
               <p className="text-muted-foreground text-sm sm:text-base leading-relaxed mb-6 sm:mb-8">
-                Whether you need help with SEO, web development, hosting, or content marketing, our
-                team is ready to assist. Get in touch using any of the methods below, or open our
-                contact form to send us a detailed message.
+                Whether you need help with <Link href="/services#seo" className="text-primary hover:underline">SEO</Link>, <Link href="/services#web-development" className="text-primary hover:underline">web development</Link>, <Link href="/services#hosting" className="text-primary hover:underline">hosting</Link>, or <Link href="/services#content" className="text-primary hover:underline">content marketing</Link>, our
+                team is ready to assist. <Link href="/about" className="text-primary hover:underline">Learn more about our agency</Link> or get in touch using any of the methods below.
               </p>
 
               <div className="space-y-4 sm:space-y-5 mb-8">
