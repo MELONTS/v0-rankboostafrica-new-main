@@ -1,5 +1,6 @@
 import React from "react"
 import type { Metadata } from 'next'
+import Script from 'next/script'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { StructuredData } from '@/components/structured-data'
@@ -89,33 +90,7 @@ export default function RootLayout({
           fetchPriority="high"
         />
 
-        {/* Google Analytics 4 */}
-        <script
-          async
-          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-        />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      // GA4
-      gtag('config', '${GA_MEASUREMENT_ID}', {
-        page_title: document.title,
-        page_location: window.location.href,
-        page_path: window.location.pathname,
-        send_page_view: true,
-        anonymize_ip: true,
-        cookie_flags: 'SameSite=None;Secure'
-      });
-
-      // Google Ads base tag
-      gtag('config', 'AW-17934460660');
-    `,
-          }}
-        />
+        {/* GA/GTM loaded via next/script in body for non-blocking delivery */}
 
         {/* Structured Data / JSON-LD */}
         <StructuredData />
@@ -169,6 +144,28 @@ export default function RootLayout({
       <body className={`font-sans antialiased`}>
         {children}
         <Analytics />
+
+        {/* GA4 + Google Ads -- deferred to avoid render-blocking */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_MEASUREMENT_ID}', {
+              page_title: document.title,
+              page_location: window.location.href,
+              page_path: window.location.pathname,
+              send_page_view: true,
+              anonymize_ip: true,
+              cookie_flags: 'SameSite=None;Secure'
+            });
+            gtag('config', 'AW-17934460660');
+          `}
+        </Script>
       </body>
     </html>
   )
