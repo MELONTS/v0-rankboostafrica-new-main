@@ -4,7 +4,7 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Check, ArrowRight } from "lucide-react"
 import { ContactForm } from "@/components/contact-form"
-import { ToolsCarousel, seoTools } from "@/components/tools-carousel"
+
 
 const seoFeatures = [
   "Technical SEO Audits & Implementation",
@@ -88,9 +88,6 @@ Thank you!"
             </div>
           </div>
         </div>
-
-        {/* SEO Tools Carousel */}
-        <ToolsCarousel tools={seoTools} label="Powered by industry-leading SEO tools" />
       </div>
     </section>
   )
