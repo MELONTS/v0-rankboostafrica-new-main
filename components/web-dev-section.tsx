@@ -4,7 +4,6 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Check, ArrowRight } from "lucide-react"
 import { ContactForm } from "@/components/contact-form"
-import { ToolsCarousel, webDevTools } from "@/components/tools-carousel"
 
 const webDevFeatures = [
   "Custom Wordpress Design",
@@ -88,9 +87,6 @@ Thank you!"
             />
           </div>
         </div>
-
-        {/* Web Dev Platform Carousel */}
-        <ToolsCarousel tools={webDevTools} label="Built with modern platforms and frameworks" />
       </div>
     </section>
   )
