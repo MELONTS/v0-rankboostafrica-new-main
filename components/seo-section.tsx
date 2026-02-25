@@ -70,10 +70,11 @@ Thank you!"
           <div className="relative mt-8 lg:mt-0">
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl shadow-primary/10">
               <Image
-                src="/images/seo-services.jpg"
-                alt="SEO analytics dashboard showing organic traffic growth and search rankings"
+                src="/images/seo-analysis-dashboard.jpg"
+                alt="Digital marketing professional analysing SEO keyword rankings and organic traffic data on an ultrawide monitor"
                 fill
                 className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
             {/* Floating Stats Card */}

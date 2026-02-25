@@ -141,8 +141,8 @@ export default function AboutPage() {
             <div className="relative">
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl shadow-primary/10">
                 <Image
-                  src="/images/team.jpg"
-                  alt="RankBoost Africa team in South African digital marketing office"
+                  src="/images/rankboost-team.jpg"
+                  alt="RankBoost Africa digital marketing team collaborating on a website project in their South African office"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"

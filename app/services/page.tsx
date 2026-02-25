@@ -45,8 +45,8 @@ const services = [
     id: "seo",
     icon: Search,
     title: "Search Engine Optimisation (SEO)",
-    image: "/images/seo-services.jpg",
-    imageAlt: "SEO analytics dashboard showing ranking improvements",
+    image: "/images/seo-analysis-dashboard.jpg",
+    imageAlt: "Digital marketing professional analysing SEO keyword rankings and organic traffic data on an ultrawide monitor",
     description:
       "We help your business climb to the top of Google search results through proven, white-hat SEO strategies tailored to the South African market.",
     subServices: [
@@ -79,8 +79,8 @@ const services = [
     id: "web-development",
     icon: Code,
     title: "Web Development",
-    image: "/images/web-development.jpg",
-    imageAlt: "Modern responsive website design on multiple devices",
+    image: "/images/web-development-workspace.jpg",
+    imageAlt: "Professional web developer dual-monitor setup showing code editor and responsive website preview",
     description:
       "We build fast, responsive, SEO-optimised websites that convert visitors into customers. From corporate sites to full e-commerce stores, we deliver pixel-perfect results.",
     subServices: [
@@ -113,8 +113,8 @@ const services = [
     id: "hosting",
     icon: Server,
     title: "Web Hosting",
-    image: "/images/web-hosting.jpg",
-    imageAlt: "Secure server infrastructure for reliable web hosting",
+    image: "/images/secure-server-room.jpg",
+    imageAlt: "Premium secure server room with glass-enclosed racks, fibre optic cables, and real-time uptime monitoring",
     description:
       "Reliable, fast, and secure managed hosting that keeps your website online 24/7. We handle the technical side so you can focus on growing your business.",
     subServices: [
@@ -147,8 +147,8 @@ const services = [
     id: "content",
     icon: FileText,
     title: "Content Marketing",
-    image: "/images/content-marketing.jpg",
-    imageAlt: "Content strategy planning with analytics and creative materials",
+    image: "/images/content-marketing-team.jpg",
+    imageAlt: "Creative marketing team collaborating on content strategy with editorial calendars and audience analytics",
     description:
       "Strategic content creation and distribution that builds authority, drives organic traffic, and converts readers into customers.",
     subServices: [
