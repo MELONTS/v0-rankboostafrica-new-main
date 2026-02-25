@@ -247,7 +247,7 @@ export default function ServicesPage() {
             What We Offer
           </span>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-balance">
-            Digital Marketing Services in South Africa
+            Digital Marketing Experts in South Africa 2026
           </h1>
           <p className="text-muted-foreground text-sm sm:text-base md:text-lg leading-relaxed">
             From search engine optimisation to web development, hosting, and content marketing, we
