@@ -4,18 +4,7 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Check, ArrowRight } from "lucide-react"
 import { ContactForm } from "@/components/contact-form"
-import { ToolsCarousel } from "@/components/tools-carousel"
-
-const seoTools = [
-  { name: "SEMrush", icon: "/icons/semrush.svg" },
-  { name: "Google Analytics 4", icon: "/icons/google-analytics.svg" },
-  { name: "Google Search Console", icon: "/icons/google-search-console.svg" },
-  { name: "Ahrefs", icon: "/icons/ahrefs.svg" },
-  { name: "Google Ads", icon: "/icons/google-ads.svg" },
-  { name: "Google Tag Manager", icon: "/icons/google-tag-manager.svg" },
-  { name: "Screaming Frog", icon: "/icons/screaming-frog.svg" },
-  { name: "Google My Business", icon: "/icons/google-my-business.svg" },
-]
+import { ToolsCarousel, seoTools } from "@/components/tools-carousel"
 
 const seoFeatures = [
   "Technical SEO Audits & Implementation",

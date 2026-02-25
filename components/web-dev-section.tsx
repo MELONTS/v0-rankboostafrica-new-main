@@ -4,15 +4,7 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Check, ArrowRight } from "lucide-react"
 import { ContactForm } from "@/components/contact-form"
-import { ToolsCarousel } from "@/components/tools-carousel"
-
-const webDevTools = [
-  { name: "Shopify", icon: "/icons/shopify.svg" },
-  { name: "Next.js", icon: "/icons/nextjs.svg" },
-  { name: "React", icon: "/icons/react.svg" },
-  { name: "WordPress", icon: "/icons/wordpress.svg" },
-  { name: "WooCommerce", icon: "/icons/woocommerce.svg" },
-]
+import { ToolsCarousel, webDevTools } from "@/components/tools-carousel"
 
 const webDevFeatures = [
   "Custom Wordpress Design",
