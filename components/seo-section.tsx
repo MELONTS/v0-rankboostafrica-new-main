@@ -17,9 +17,9 @@ const seoFeatures = [
 
 export function SEOSection() {
   return (
-    <section id="seo" className="py-12 sm:py-16 md:py-20 scroll-mt-16">
+    <section id="seo" className="py-8 sm:py-10 md:py-12 scroll-mt-16">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-center">
           {/* Content */}
           <div>
             <span className="text-primary font-semibold text-xs sm:text-sm tracking-wide uppercase mb-2 sm:mb-3 block">
@@ -28,11 +28,11 @@ export function SEOSection() {
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 md:mb-6 text-balance">
               Dominate Google Rankings with Expert SEO Services
             </h2>
-            <p className="text-muted-foreground text-sm sm:text-base md:text-lg mb-6 sm:mb-8 leading-relaxed">
+            <p className="text-muted-foreground text-sm sm:text-base md:text-lg mb-4 sm:mb-6 leading-relaxed">
               Are you looking for dependable SEO support that produces the best results in your area? Our professional SEO services are designed to increase local and national search visibility, converting high-intent customers actively looking for your business and related service and product keywords.
             </p>
 
-            <ul className="space-y-2 sm:space-y-3 mb-6 sm:mb-8">
+            <ul className="space-y-1.5 sm:space-y-2 mb-4 sm:mb-6">
               {seoFeatures.map((feature) => (
                 <li key={feature} className="flex items-start gap-2 sm:gap-3">
                   <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">

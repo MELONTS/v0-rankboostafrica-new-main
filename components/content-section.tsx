@@ -16,9 +16,9 @@ const contentFeatures = [
 
 export function ContentSection() {
   return (
-    <section id="content" className="py-12 sm:py-16 md:py-20 bg-secondary/30 scroll-mt-16">
+    <section id="content" className="py-8 sm:py-10 md:py-12 bg-secondary/30 scroll-mt-16">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-center">
           {/* Image - Order changes on mobile */}
           <div className="relative order-2 lg:order-1 mt-8 lg:mt-0">
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl shadow-primary/10">
@@ -48,13 +48,13 @@ export function ContentSection() {
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 md:mb-6 text-balance">
               Content That Drives Results
             </h2>
-            <p className="text-muted-foreground text-sm sm:text-base md:text-lg mb-6 sm:mb-8 leading-relaxed">
+            <p className="text-muted-foreground text-sm sm:text-base md:text-lg mb-4 sm:mb-6 leading-relaxed">
               Engage your audience with compelling content that converts. Our digital marketing
               experts create strategic content that builds brand authority, drives organic traffic,
               and turns visitors into loyal customers.
             </p>
 
-            <ul className="space-y-2 sm:space-y-3 mb-6 sm:mb-8">
+            <ul className="space-y-1.5 sm:space-y-2 mb-4 sm:mb-6">
               {contentFeatures.map((feature) => (
                 <li key={feature} className="flex items-start gap-2 sm:gap-3">
                   <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">

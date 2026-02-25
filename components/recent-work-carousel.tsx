@@ -83,10 +83,10 @@ export function RecentWorkCarousel() {
   }, [emblaApi, onSelect])
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 bg-secondary/30">
+    <section className="py-8 sm:py-10 md:py-12 bg-secondary/30">
       <div className="container mx-auto px-4 lg:px-8">
         {/* Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8 sm:mb-10 md:mb-12">
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-6 sm:mb-7 md:mb-8">
           <div>
             <span className="text-primary font-semibold text-xs sm:text-sm tracking-wide uppercase mb-2 block">
               Our Portfolio
