@@ -51,7 +51,7 @@ export function HeroSection() {
 
           {/* Main Headline */}
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight mb-3 sm:mb-4 md:mb-6 text-balance">
-            Best <span className="text-primary">Digital</span> Marketing Services in South Africa 2026
+            <span className="text-primary">Digital</span> Marketing Services in South Africa 2026
           </h1>
 
           {/* Sub-headline */}
