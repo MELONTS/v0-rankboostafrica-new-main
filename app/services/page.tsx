@@ -85,17 +85,17 @@ const services = [
       "We build fast, responsive, SEO-optimised websites that convert visitors into customers. From corporate sites to full e-commerce stores, we deliver pixel-perfect results.",
     subServices: [
       {
-        title: "WordPress Development",
+        title: "Custom WordPress Build",
         description:
           "Custom WordPress websites built for performance and ease of management. We create themes, plugins, and content management solutions tailored to your needs.",
       },
       {
-        title: "Shopify Development",
+        title: "Shopify Web Development",
         description:
           "Launch your online store with a professionally designed Shopify storefront. We handle theme customisation, product setup, payment integration, and more.",
       },
       {
-        title: "Government Websites",
+        title: "Corporate & Government Websites",
         description:
           "PAIA-compliant, accessible, and secure websites for government departments and agencies. We meet all regulatory requirements while delivering modern user experiences.",
       },
@@ -262,16 +262,14 @@ export default function ServicesPage() {
         <section
           key={service.id}
           id={service.id}
-          className={`py-12 sm:py-16 md:py-20 scroll-mt-16 ${
-            index % 2 === 1 ? "bg-secondary/30" : ""
-          }`}
+          className={`py-12 sm:py-16 md:py-20 scroll-mt-16 ${index % 2 === 1 ? "bg-secondary/30" : ""
+            }`}
         >
           <div className="container mx-auto px-4 lg:px-8">
             {/* Service Header */}
             <div
-              className={`grid lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-8 sm:mb-10 md:mb-12 ${
-                index % 2 === 1 ? "lg:grid-flow-dense" : ""
-              }`}
+              className={`grid lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-8 sm:mb-10 md:mb-12 ${index % 2 === 1 ? "lg:grid-flow-dense" : ""
+                }`}
             >
               <div className={index % 2 === 1 ? "lg:col-start-2" : ""}>
                 <div className="flex items-center gap-3 mb-3 sm:mb-4">
