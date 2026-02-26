@@ -111,12 +111,12 @@ export default function ContactPage() {
       </div>
 
       {/* Hero */}
-      <section className="py-12 sm:py-16 md:py-20 bg-secondary/30">
+      <section className="pt-4 pb-6 sm:pt-6 sm:pb-8 md:pt-8 md:pb-10 bg-secondary/30">
         <div className="container mx-auto px-4 lg:px-8 max-w-3xl text-center">
-          <span className="text-primary font-semibold text-xs sm:text-sm tracking-wide uppercase mb-2 sm:mb-3 block">
+          <span className="text-primary font-semibold text-xs sm:text-sm tracking-wide uppercase mb-1.5 sm:mb-2 block">
             Get In Touch
           </span>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-balance">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 text-balance">
             Contact RankBoost Africa
           </h1>
           <p className="text-muted-foreground text-sm sm:text-base md:text-lg leading-relaxed">
@@ -128,20 +128,20 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Details + CTA */}
-      <section className="py-12 sm:py-16 md:py-20">
+      <section className="py-8 sm:py-10 md:py-12">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+          <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-start">
             {/* Contact Information */}
             <div>
-              <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">
+              <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">
                 How to Reach Us
               </h2>
-              <p className="text-muted-foreground text-sm sm:text-base leading-relaxed mb-6 sm:mb-8">
+              <p className="text-muted-foreground text-sm sm:text-base leading-relaxed mb-4 sm:mb-6">
                 Whether you need help with <Link href="/services#seo" className="text-primary hover:underline">SEO</Link>, <Link href="/services#web-development" className="text-primary hover:underline">web development</Link>, <Link href="/services#hosting" className="text-primary hover:underline">hosting</Link>, or <Link href="/services#content" className="text-primary hover:underline">content marketing</Link>, our
                 team is ready to assist. <Link href="/about" className="text-primary hover:underline">Learn more about our agency</Link> or get in touch using any of the methods below.
               </p>
 
-              <div className="space-y-4 sm:space-y-5 mb-8">
+              <div className="space-y-3 sm:space-y-4 mb-6">
                 {contactDetails.map((detail) => (
                   <div key={detail.label} className="flex items-start gap-4">
                     <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
@@ -177,11 +177,11 @@ export default function ContactPage() {
             </div>
 
             {/* Response promise card */}
-            <div className="bg-card border border-border rounded-2xl p-6 sm:p-8 lg:p-10">
-              <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4">
+            <div className="bg-card border border-border rounded-2xl p-5 sm:p-6 lg:p-8">
+              <h3 className="text-lg sm:text-xl font-bold mb-2.5 sm:mb-3">
                 What Happens Next?
               </h3>
-              <ol className="space-y-4 sm:space-y-5">
+              <ol className="space-y-3 sm:space-y-4">
                 <li className="flex gap-3">
                   <span className="w-7 h-7 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-xs font-bold flex-shrink-0">
                     1
