@@ -98,7 +98,7 @@ export function Footer() {
               ))}
               <li className="flex items-center gap-3 text-background/70 text-sm">
                 <MapPin className="w-4 h-4 text-primary" />
-                <span>South Africa</span>
+                <span>De La Fontaine Ave, Monte Vista <br>Cape Town, South Africa</span>
               </li>
             </ul>
           </div>
