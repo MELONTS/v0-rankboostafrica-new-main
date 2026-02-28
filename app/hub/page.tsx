@@ -4,7 +4,7 @@ import Link from "next/link"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { ScrollProgress } from "@/components/scroll-progress"
-import { ChevronRight, Clock, ArrowRight, BookOpen, Search, Code, PenTool, Share2 } from "lucide-react"
+import { ChevronRight, Clock, ArrowRight, BookOpen } from "lucide-react"
 import { articles } from "@/lib/articles"
 
 export const metadata: Metadata = {
@@ -29,13 +29,6 @@ export const metadata: Metadata = {
     description:
       "Free educational articles on SEO, web development, content marketing, and social media.",
   },
-}
-
-const categoryIcons: Record<string, React.ElementType> = {
-  SEO: Search,
-  "Web Development": Code,
-  "Content Marketing": PenTool,
-  "Social Media": Share2,
 }
 
 const categoryColors: Record<string, string> = {
@@ -141,42 +134,6 @@ export default function HubPage() {
                 />
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Category Overview */}
-      <section className="py-8 sm:py-10 md:py-12">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="text-center mb-6 sm:mb-8">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 text-balance">
-              Explore by Topic
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto text-sm sm:text-base md:text-lg leading-relaxed">
-              Browse our articles by category to find the insights most relevant to your business goals.
-            </p>
-          </div>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
-            {(["SEO", "Web Development", "Content Marketing", "Social Media"] as const).map(
-              (category) => {
-                const Icon = categoryIcons[category]
-                const count = articles.filter((a) => a.category === category).length
-                return (
-                  <div
-                    key={category}
-                    className="p-4 sm:p-5 bg-card rounded-xl border border-border hover:border-primary/50 transition-colors text-center"
-                  >
-                    <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-3">
-                      <Icon className="w-5 h-5 text-primary" />
-                    </div>
-                    <h3 className="text-sm sm:text-base font-semibold mb-1">{category}</h3>
-                    <p className="text-muted-foreground text-xs sm:text-sm">
-                      {count} {count === 1 ? "article" : "articles"}
-                    </p>
-                  </div>
-                )
-              }
-            )}
           </div>
         </div>
       </section>
