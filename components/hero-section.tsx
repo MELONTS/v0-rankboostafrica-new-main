@@ -1,6 +1,6 @@
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Search, Code, Server, FileText, Calendar } from "lucide-react"
+import { ArrowRight, Search, Code, Server, FileText } from "lucide-react"
 import { ContactForm } from "@/components/contact-form"
 
 export function HeroSection() {
@@ -40,14 +40,6 @@ export function HeroSection() {
         relative z-10"
       >
         <div className="max-w-4xl mx-auto text-center">
-          {/* Date stamp */}
-          <div className="flex items-center justify-center gap-1.5 text-muted-foreground text-xs sm:text-sm mb-3 sm:mb-4">
-            <Calendar className="w-3.5 h-3.5 text-primary" />
-            <time dateTime={new Date().toISOString().split("T")[0]}>
-              {new Date().toLocaleDateString("en-ZA", { year: "numeric", month: "long", day: "numeric" })}
-            </time>
-          </div>
-
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs sm:text-sm font-medium mb-4 sm:mb-6">
             <span className="relative flex h-2 w-2">

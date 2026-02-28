@@ -4,7 +4,7 @@ import Link from "next/link"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { ScrollProgress } from "@/components/scroll-progress"
-import { ChevronRight, Target, TrendingUp, Users, Shield, Calendar } from "lucide-react"
+import { ChevronRight, Target, TrendingUp, Users, Shield } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "About RankBoost Africa | Digital Marketing Experts in South Africa",
@@ -120,12 +120,6 @@ export default function AboutPage() {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-center">
             <div>
-              <div className="flex items-center gap-1.5 text-muted-foreground text-xs sm:text-sm mb-3">
-                <Calendar className="w-3.5 h-3.5 text-primary" />
-                <time dateTime={new Date().toISOString().split("T")[0]}>
-                  {new Date().toLocaleDateString("en-ZA", { year: "numeric", month: "long", day: "numeric" })}
-                </time>
-              </div>
               <span className="text-primary font-semibold text-xs sm:text-sm tracking-wide uppercase mb-2 sm:mb-3 block">
                 About Our Agency
               </span>
