@@ -1,8 +1,16 @@
 import type { MetadataRoute } from "next"
+import { articles } from "@/lib/articles"
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://www.rankboost.africa"
   const now = new Date().toISOString()
+
+  const articleEntries: MetadataRoute.Sitemap = articles.map((article) => ({
+    url: `${baseUrl}/hub/${article.slug}`,
+    lastModified: article.updatedAt || article.publishedAt,
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }))
 
   return [
     {
@@ -18,6 +26,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/hub`,
+      lastModified: now,
+      changeFrequency: "daily",
+      priority: 0.85,
+    },
+    {
       url: `${baseUrl}/about`,
       lastModified: now,
       changeFrequency: "daily",
@@ -29,5 +43,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "daily",
       priority: 0.8,
     },
+    ...articleEntries,
   ]
 }
