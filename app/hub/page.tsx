@@ -8,7 +8,7 @@ import { ChevronRight, Clock, ArrowRight, BookOpen, Calendar } from "lucide-reac
 import { articles } from "@/lib/articles"
 
 export const metadata: Metadata = {
-  title: "Digital Marketing Hub | RankBoost Africa - SEO, Web Dev & Content Insights",
+  title: "RankBoost Africa | Digital Marketing Hub for Insights",
   description:
     "Explore expert articles on SEO, web development, content marketing, and social media. Free educational resources to help South African businesses grow their online presence.",
   alternates: {
