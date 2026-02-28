@@ -14,6 +14,7 @@ import {
   FileText,
   ArrowRight,
   CheckCircle2,
+  Calendar,
 } from "lucide-react"
 
 export const metadata: Metadata = {
@@ -243,6 +244,12 @@ export default function ServicesPage() {
       {/* Hero */}
       <section className="pt-4 pb-6 sm:pt-6 sm:pb-8 md:pt-8 md:pb-10 bg-secondary/30">
         <div className="container mx-auto px-4 lg:px-8 max-w-3xl text-center">
+          <div className="flex items-center justify-center gap-1.5 text-muted-foreground text-xs sm:text-sm mb-3">
+            <Calendar className="w-3.5 h-3.5 text-primary" />
+            <time dateTime={new Date().toISOString().split("T")[0]}>
+              {new Date().toLocaleDateString("en-ZA", { year: "numeric", month: "long", day: "numeric" })}
+            </time>
+          </div>
           <span className="text-primary font-semibold text-xs sm:text-sm tracking-wide uppercase mb-2 sm:mb-3 block">
             What We Offer
           </span>
