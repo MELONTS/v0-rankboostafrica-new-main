@@ -4,6 +4,83 @@ import Link from "next/link"
 import { notFound } from "next/navigation"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+
+/* ── Contextual internal link map ── */
+const internalLinks: { phrase: string; href: string; title: string }[] = [
+  { phrase: "SEO services", href: "/services#seo", title: "RankBoost Africa SEO Services" },
+  { phrase: "search engine optimisation", href: "/services#seo", title: "SEO Services in South Africa" },
+  { phrase: "SEO strategy", href: "/services#seo", title: "Professional SEO Strategy" },
+  { phrase: "keyword research", href: "/services#seo", title: "SEO Keyword Research Services" },
+  { phrase: "on-page SEO", href: "/services#seo", title: "On-Page SEO Optimisation" },
+  { phrase: "technical SEO", href: "/services#seo", title: "Technical SEO Audits" },
+  { phrase: "link building", href: "/services#seo", title: "Link Building Services" },
+  { phrase: "local SEO", href: "/services#seo", title: "Local SEO for South African Businesses" },
+  { phrase: "web development", href: "/services#web-development", title: "Web Development Services" },
+  { phrase: "website design", href: "/services#web-development", title: "Custom Website Design" },
+  { phrase: "responsive design", href: "/services#web-development", title: "Responsive Web Design" },
+  { phrase: "e-commerce", href: "/services#web-development", title: "E-commerce Development" },
+  { phrase: "WordPress", href: "/services#web-development", title: "WordPress Development" },
+  { phrase: "Shopify", href: "/services#web-development", title: "Shopify Development" },
+  { phrase: "content marketing", href: "/services#content", title: "Content Marketing Services" },
+  { phrase: "content strategy", href: "/services#content", title: "Content Strategy Services" },
+  { phrase: "blog content", href: "/services#content", title: "Blog Content Creation" },
+  { phrase: "copywriting", href: "/services#content", title: "Professional Copywriting Services" },
+  { phrase: "web hosting", href: "/services#hosting", title: "Managed Web Hosting" },
+  { phrase: "hosting", href: "/services#hosting", title: "Web Hosting Solutions" },
+  { phrase: "website performance", href: "/services#hosting", title: "Website Performance Optimisation" },
+]
+
+/**
+ * Replaces the FIRST occurrence of each matching phrase in a paragraph with an
+ * internal link. Only one link per phrase per paragraph to keep it natural.
+ */
+function renderWithInlinks(text: string): React.ReactNode {
+  const used = new Set<string>()
+  const parts: React.ReactNode[] = []
+  let remaining = text
+
+  while (remaining.length > 0) {
+    let earliestIndex = Infinity
+    let matchedLink: (typeof internalLinks)[number] | null = null
+
+    for (const link of internalLinks) {
+      if (used.has(link.phrase)) continue
+      const idx = remaining.toLowerCase().indexOf(link.phrase.toLowerCase())
+      if (idx !== -1 && idx < earliestIndex) {
+        earliestIndex = idx
+        matchedLink = link
+      }
+    }
+
+    if (!matchedLink || earliestIndex === Infinity) {
+      parts.push(remaining)
+      break
+    }
+
+    used.add(matchedLink.phrase)
+    const matchEnd = earliestIndex + matchedLink.phrase.length
+    const originalPhrase = remaining.slice(earliestIndex, matchEnd)
+
+    if (earliestIndex > 0) {
+      parts.push(remaining.slice(0, earliestIndex))
+    }
+
+    parts.push(
+      <Link
+        key={`${matchedLink.href}-${parts.length}`}
+        href={matchedLink.href}
+        title={matchedLink.title}
+        className="text-primary hover:underline font-medium"
+      >
+        {originalPhrase}
+      </Link>
+    )
+
+    remaining = remaining.slice(matchEnd)
+  }
+
+  return parts.length === 1 && typeof parts[0] === "string" ? parts[0] : <>{parts}</>
+}
 import { ScrollProgress } from "@/components/scroll-progress"
 import { ChevronRight, Clock, Calendar, ArrowLeft, ArrowRight, User } from "lucide-react"
 import { articles, getArticleBySlug } from "@/lib/articles"
@@ -222,7 +299,7 @@ export default async function ArticlePage({
                   key={index}
                   className="text-muted-foreground text-sm sm:text-base md:text-lg leading-relaxed mb-4 sm:mb-5"
                 >
-                  {paragraph}
+                  {renderWithInlinks(paragraph)}
                 </p>
               )
             })}
