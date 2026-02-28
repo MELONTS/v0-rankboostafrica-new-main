@@ -22,7 +22,9 @@ export function MobileMenuProvider({ children }: { children: React.ReactNode }) 
 export function useMobileMenu() {
   const context = useContext(MobileMenuContext)
   if (!context) {
-    throw new Error("useMobileMenu must be used within MobileMenuProvider")
+    return { isOpen: false, setIsOpen: () => {} } as MobileMenuContextType
   }
   return context
 }
+
+export const DRAWER_WIDTH = 280
