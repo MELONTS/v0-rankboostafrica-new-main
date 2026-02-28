@@ -6,7 +6,7 @@ import { Menu, X, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Logo } from "@/components/logo"
 import { ContactForm } from "@/components/contact-form"
-import { useMobileMenu, DRAWER_WIDTH } from "@/components/mobile-menu-provider"
+import { useMobileMenu } from "@/components/mobile-menu-provider"
 
 const navLinks = [
   { href: "/services", label: "Services" },
@@ -62,15 +62,11 @@ export function Header() {
     <>
       {/* Header bar -- moves with page content via the push wrapper */}
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${
           isScrolled
             ? "bg-background/95 backdrop-blur-md shadow-lg border-b border-border mt-1"
             : "bg-transparent mt-1"
-        }`}
-        style={{
-          transform: isOpen ? `translateX(-${DRAWER_WIDTH}px)` : "translateX(0)",
-          transition: "transform 0.35s cubic-bezier(0.4, 0, 0.2, 1)",
-        }}
+        } ${isOpen ? "-translate-x-[280px]" : "translate-x-0"}`}
       >
         <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-12 sm:h-14 lg:h-16">
@@ -123,12 +119,9 @@ export function Header() {
 
       {/* Slide-in drawer panel -- sits outside the push wrapper */}
       <aside
-        className="fixed top-0 right-0 bottom-0 z-[70] bg-background border-l border-border flex flex-col lg:hidden"
-        style={{
-          width: `${DRAWER_WIDTH}px`,
-          transform: isOpen ? "translateX(0)" : "translateX(100%)",
-          transition: "transform 0.35s cubic-bezier(0.4, 0, 0.2, 1)",
-        }}
+        className={`fixed top-0 right-0 bottom-0 z-[70] w-[280px] bg-background border-l border-border flex flex-col lg:hidden transition-transform duration-300 ease-in-out ${
+          isOpen ? "translate-x-0" : "translate-x-full"
+        }`}
         aria-label="Mobile navigation"
         role="dialog"
         aria-modal={isOpen}

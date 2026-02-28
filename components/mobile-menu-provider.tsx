@@ -24,10 +24,15 @@ export const DRAWER_WIDTH = 280
 
 export function MobileMenuProvider({ children }: { children: ReactNode }) {
   const [isOpen, setIsOpen] = useState(false)
+  const [mounted, setMounted] = useState(false)
 
   const open = useCallback(() => setIsOpen(true), [])
   const close = useCallback(() => setIsOpen(false), [])
   const toggle = useCallback(() => setIsOpen((prev) => !prev), [])
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   /* Lock body scroll when drawer is open */
   useEffect(() => {
@@ -44,22 +49,21 @@ export function MobileMenuProvider({ children }: { children: ReactNode }) {
   return (
     <MobileMenuContext.Provider value={{ isOpen, open, close, toggle }}>
       {/* Backdrop */}
-      <div
-        className={`fixed inset-0 z-[60] bg-foreground/40 backdrop-blur-sm lg:hidden ${
-          isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
-        }`}
-        onClick={close}
-        aria-hidden="true"
-        style={{ transition: "opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1)" }}
-      />
+      {mounted && (
+        <div
+          className={`fixed inset-0 z-[60] bg-foreground/40 backdrop-blur-sm transition-opacity duration-300 ease-in-out lg:hidden ${
+            isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+          }`}
+          onClick={close}
+          aria-hidden="true"
+        />
+      )}
 
       {/* Push wrapper -- shifts all page content when drawer is open */}
       <div
-        className="min-h-screen"
-        style={{
-          transform: isOpen ? `translateX(-${DRAWER_WIDTH}px)` : "translateX(0)",
-          transition: "transform 0.35s cubic-bezier(0.4, 0, 0.2, 1)",
-        }}
+        className={`min-h-screen transition-transform duration-300 ease-in-out ${
+          mounted && isOpen ? "-translate-x-[280px]" : "translate-x-0"
+        }`}
       >
         {children}
       </div>
