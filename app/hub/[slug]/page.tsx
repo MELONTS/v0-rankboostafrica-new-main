@@ -4,6 +4,89 @@ import Link from "next/link"
 import { notFound } from "next/navigation"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+
+/* ── Contextual internal links: one entry per destination, max 4 total ── */
+const internalLinks: { phrases: string[]; href: string; title: string }[] = [
+  { phrases: ["SEO services", "search engine optimisation", "SEO strategy"], href: "/services#seo", title: "RankBoost Africa SEO Services" },
+  { phrases: ["web development", "website design", "e-commerce"], href: "/services#web-development", title: "Web Development Services" },
+  { phrases: ["content marketing", "content strategy", "blog content"], href: "/services#content", title: "Content Marketing Services" },
+  { phrases: ["web hosting", "hosting", "website performance"], href: "/services#hosting", title: "Managed Web Hosting" },
+]
+
+const MAX_LINKS_PER_PAGE = 4
+
+/**
+ * Scans all paragraphs and inserts at most MAX_LINKS_PER_PAGE internal links,
+ * never linking to the same destination more than once.
+ */
+function renderContentWithInlinks(paragraphs: string[]): React.ReactNode[] {
+  const usedDestinations = new Set<string>()
+  let linkCount = 0
+
+  return paragraphs
+    .filter((p) => p.trim() !== "")
+    .map((paragraph, pIdx) => {
+      if (paragraph.startsWith("## ")) {
+        return (
+          <h2 key={pIdx} className="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4 text-foreground">
+            {paragraph.replace("## ", "")}
+          </h2>
+        )
+      }
+
+      if (linkCount >= MAX_LINKS_PER_PAGE) {
+        return (
+          <p key={pIdx} className="text-muted-foreground text-sm sm:text-base md:text-lg leading-relaxed mb-4 sm:mb-5">
+            {paragraph}
+          </p>
+        )
+      }
+
+      const node = insertOneLink(paragraph, usedDestinations, pIdx)
+      if (node.linked) linkCount++
+
+      return (
+        <p key={pIdx} className="text-muted-foreground text-sm sm:text-base md:text-lg leading-relaxed mb-4 sm:mb-5">
+          {node.content}
+        </p>
+      )
+    })
+}
+
+function insertOneLink(
+  text: string,
+  usedDestinations: Set<string>,
+  pIdx: number
+): { content: React.ReactNode; linked: boolean } {
+  for (const link of internalLinks) {
+    if (usedDestinations.has(link.href)) continue
+
+    for (const phrase of link.phrases) {
+      const idx = text.toLowerCase().indexOf(phrase.toLowerCase())
+      if (idx === -1) continue
+
+      usedDestinations.add(link.href)
+      const before = text.slice(0, idx)
+      const matched = text.slice(idx, idx + phrase.length)
+      const after = text.slice(idx + phrase.length)
+
+      return {
+        content: (
+          <>
+            {before}
+            <Link href={link.href} title={link.title} className="text-primary hover:underline font-medium">
+              {matched}
+            </Link>
+            {after}
+          </>
+        ),
+        linked: true,
+      }
+    }
+  }
+
+  return { content: text, linked: false }
+}
 import { ScrollProgress } from "@/components/scroll-progress"
 import { ChevronRight, Clock, Calendar, ArrowLeft, ArrowRight, User } from "lucide-react"
 import { articles, getArticleBySlug } from "@/lib/articles"
@@ -206,26 +289,7 @@ export default async function ArticlePage({
       <article className="py-4 sm:py-6 md:py-8">
         <div className="container mx-auto px-4 lg:px-8 max-w-3xl">
           <div className="prose-content">
-            {article.content.map((paragraph, index) => {
-              if (paragraph.startsWith("## ")) {
-                return (
-                  <h2
-                    key={index}
-                    className="text-xl sm:text-2xl md:text-3xl font-bold mt-8 sm:mt-10 mb-3 sm:mb-4 text-balance"
-                  >
-                    {paragraph.replace("## ", "")}
-                  </h2>
-                )
-              }
-              return (
-                <p
-                  key={index}
-                  className="text-muted-foreground text-sm sm:text-base md:text-lg leading-relaxed mb-4 sm:mb-5"
-                >
-                  {paragraph}
-                </p>
-              )
-            })}
+            {renderContentWithInlinks(article.content)}
           </div>
 
           {/* Tags */}

@@ -234,6 +234,65 @@ export default function HubPage() {
         </div>
       </section>
 
+      {/* Contextual Service Links */}
+      <section className="py-8 sm:py-10 md:py-12 bg-secondary/30">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="text-center mb-6 sm:mb-8">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 text-balance">
+              Put These Insights Into Action
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto text-sm sm:text-base md:text-lg leading-relaxed">
+              Every article in our hub is backed by real services we deliver for South African businesses.
+              Explore how we can help you implement these strategies.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              {
+                title: "SEO Services",
+                href: "/services#seo",
+                description:
+                  "From keyword research to technical audits, our SEO services drive measurable organic growth for your business.",
+              },
+              {
+                title: "Web Development",
+                href: "/services#web-development",
+                description:
+                  "Custom WordPress and Shopify websites built with SEO best practices and responsive design from day one.",
+              },
+              {
+                title: "Content Marketing",
+                href: "/services#content",
+                description:
+                  "Strategic blog content, landing page copy, and editorial calendars that build authority and attract traffic.",
+              },
+              {
+                title: "Managed Hosting",
+                href: "/services#hosting",
+                description:
+                  "Fast, secure hosting infrastructure optimised for performance, uptime, and search engine rankings.",
+              },
+            ].map((service) => (
+              <Link
+                key={service.href}
+                href={service.href}
+                className="group p-5 sm:p-6 bg-card rounded-xl border border-border hover:border-primary/50 transition-colors"
+              >
+                <h3 className="text-base sm:text-lg font-semibold mb-2 group-hover:text-primary transition-colors">
+                  {service.title}
+                </h3>
+                <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed mb-3">
+                  {service.description}
+                </p>
+                <span className="flex items-center gap-1.5 text-primary font-medium text-sm group-hover:gap-2.5 transition-all">
+                  Learn More <ArrowRight className="w-3.5 h-3.5" />
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-8 sm:py-10 md:py-12 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 lg:px-8 text-center max-w-2xl">
