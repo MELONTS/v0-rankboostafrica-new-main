@@ -5,81 +5,87 @@ import { notFound } from "next/navigation"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 
-/* ── Contextual internal link map ── */
-const internalLinks: { phrase: string; href: string; title: string }[] = [
-  { phrase: "SEO services", href: "/services#seo", title: "RankBoost Africa SEO Services" },
-  { phrase: "search engine optimisation", href: "/services#seo", title: "SEO Services in South Africa" },
-  { phrase: "SEO strategy", href: "/services#seo", title: "Professional SEO Strategy" },
-  { phrase: "keyword research", href: "/services#seo", title: "SEO Keyword Research Services" },
-  { phrase: "on-page SEO", href: "/services#seo", title: "On-Page SEO Optimisation" },
-  { phrase: "technical SEO", href: "/services#seo", title: "Technical SEO Audits" },
-  { phrase: "link building", href: "/services#seo", title: "Link Building Services" },
-  { phrase: "local SEO", href: "/services#seo", title: "Local SEO for South African Businesses" },
-  { phrase: "web development", href: "/services#web-development", title: "Web Development Services" },
-  { phrase: "website design", href: "/services#web-development", title: "Custom Website Design" },
-  { phrase: "responsive design", href: "/services#web-development", title: "Responsive Web Design" },
-  { phrase: "e-commerce", href: "/services#web-development", title: "E-commerce Development" },
-  { phrase: "WordPress", href: "/services#web-development", title: "WordPress Development" },
-  { phrase: "Shopify", href: "/services#web-development", title: "Shopify Development" },
-  { phrase: "content marketing", href: "/services#content", title: "Content Marketing Services" },
-  { phrase: "content strategy", href: "/services#content", title: "Content Strategy Services" },
-  { phrase: "blog content", href: "/services#content", title: "Blog Content Creation" },
-  { phrase: "copywriting", href: "/services#content", title: "Professional Copywriting Services" },
-  { phrase: "web hosting", href: "/services#hosting", title: "Managed Web Hosting" },
-  { phrase: "hosting", href: "/services#hosting", title: "Web Hosting Solutions" },
-  { phrase: "website performance", href: "/services#hosting", title: "Website Performance Optimisation" },
+/* ── Contextual internal links: one entry per destination, max 4 total ── */
+const internalLinks: { phrases: string[]; href: string; title: string }[] = [
+  { phrases: ["SEO services", "search engine optimisation", "SEO strategy"], href: "/services#seo", title: "RankBoost Africa SEO Services" },
+  { phrases: ["web development", "website design", "e-commerce"], href: "/services#web-development", title: "Web Development Services" },
+  { phrases: ["content marketing", "content strategy", "blog content"], href: "/services#content", title: "Content Marketing Services" },
+  { phrases: ["web hosting", "hosting", "website performance"], href: "/services#hosting", title: "Managed Web Hosting" },
 ]
 
+const MAX_LINKS_PER_PAGE = 4
+
 /**
- * Replaces the FIRST occurrence of each matching phrase in a paragraph with an
- * internal link. Only one link per phrase per paragraph to keep it natural.
+ * Scans all paragraphs and inserts at most MAX_LINKS_PER_PAGE internal links,
+ * never linking to the same destination more than once.
  */
-function renderWithInlinks(text: string): React.ReactNode {
-  const used = new Set<string>()
-  const parts: React.ReactNode[] = []
-  let remaining = text
+function renderContentWithInlinks(paragraphs: string[]): React.ReactNode[] {
+  const usedDestinations = new Set<string>()
+  let linkCount = 0
 
-  while (remaining.length > 0) {
-    let earliestIndex = Infinity
-    let matchedLink: (typeof internalLinks)[number] | null = null
+  return paragraphs
+    .filter((p) => p.trim() !== "")
+    .map((paragraph, pIdx) => {
+      if (paragraph.startsWith("## ")) {
+        return (
+          <h2 key={pIdx} className="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4 text-foreground">
+            {paragraph.replace("## ", "")}
+          </h2>
+        )
+      }
 
-    for (const link of internalLinks) {
-      if (used.has(link.phrase)) continue
-      const idx = remaining.toLowerCase().indexOf(link.phrase.toLowerCase())
-      if (idx !== -1 && idx < earliestIndex) {
-        earliestIndex = idx
-        matchedLink = link
+      if (linkCount >= MAX_LINKS_PER_PAGE) {
+        return (
+          <p key={pIdx} className="text-muted-foreground text-sm sm:text-base md:text-lg leading-relaxed mb-4 sm:mb-5">
+            {paragraph}
+          </p>
+        )
+      }
+
+      const node = insertOneLink(paragraph, usedDestinations, pIdx)
+      if (node.linked) linkCount++
+
+      return (
+        <p key={pIdx} className="text-muted-foreground text-sm sm:text-base md:text-lg leading-relaxed mb-4 sm:mb-5">
+          {node.content}
+        </p>
+      )
+    })
+}
+
+function insertOneLink(
+  text: string,
+  usedDestinations: Set<string>,
+  pIdx: number
+): { content: React.ReactNode; linked: boolean } {
+  for (const link of internalLinks) {
+    if (usedDestinations.has(link.href)) continue
+
+    for (const phrase of link.phrases) {
+      const idx = text.toLowerCase().indexOf(phrase.toLowerCase())
+      if (idx === -1) continue
+
+      usedDestinations.add(link.href)
+      const before = text.slice(0, idx)
+      const matched = text.slice(idx, idx + phrase.length)
+      const after = text.slice(idx + phrase.length)
+
+      return {
+        content: (
+          <>
+            {before}
+            <Link href={link.href} title={link.title} className="text-primary hover:underline font-medium">
+              {matched}
+            </Link>
+            {after}
+          </>
+        ),
+        linked: true,
       }
     }
-
-    if (!matchedLink || earliestIndex === Infinity) {
-      parts.push(remaining)
-      break
-    }
-
-    used.add(matchedLink.phrase)
-    const matchEnd = earliestIndex + matchedLink.phrase.length
-    const originalPhrase = remaining.slice(earliestIndex, matchEnd)
-
-    if (earliestIndex > 0) {
-      parts.push(remaining.slice(0, earliestIndex))
-    }
-
-    parts.push(
-      <Link
-        key={`${matchedLink.href}-${parts.length}`}
-        href={matchedLink.href}
-        title={matchedLink.title}
-        className="text-primary hover:underline font-medium"
-      >
-        {originalPhrase}
-      </Link>
-    )
-
-    remaining = remaining.slice(matchEnd)
   }
 
-  return parts.length === 1 && typeof parts[0] === "string" ? parts[0] : <>{parts}</>
+  return { content: text, linked: false }
 }
 import { ScrollProgress } from "@/components/scroll-progress"
 import { ChevronRight, Clock, Calendar, ArrowLeft, ArrowRight, User } from "lucide-react"
@@ -283,26 +289,7 @@ export default async function ArticlePage({
       <article className="py-4 sm:py-6 md:py-8">
         <div className="container mx-auto px-4 lg:px-8 max-w-3xl">
           <div className="prose-content">
-            {article.content.map((paragraph, index) => {
-              if (paragraph.startsWith("## ")) {
-                return (
-                  <h2
-                    key={index}
-                    className="text-xl sm:text-2xl md:text-3xl font-bold mt-8 sm:mt-10 mb-3 sm:mb-4 text-balance"
-                  >
-                    {paragraph.replace("## ", "")}
-                  </h2>
-                )
-              }
-              return (
-                <p
-                  key={index}
-                  className="text-muted-foreground text-sm sm:text-base md:text-lg leading-relaxed mb-4 sm:mb-5"
-                >
-                  {renderWithInlinks(paragraph)}
-                </p>
-              )
-            })}
+            {renderContentWithInlinks(article.content)}
           </div>
 
           {/* Tags */}
