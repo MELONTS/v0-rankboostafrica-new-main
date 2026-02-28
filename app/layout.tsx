@@ -4,7 +4,6 @@ import Script from 'next/script'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { StructuredData } from '@/components/structured-data'
-import { MobileMenuProvider } from '@/components/mobile-menu-provider'
 import './globals.css'
 
 const _geist = Geist({ subsets: ["latin"] });
@@ -142,10 +141,8 @@ export default function RootLayout({
         <meta name="google" content="nositelinkssearchbox" />
         <meta name="google" content="notranslate" />
       </head>
-      <body className={`font-sans antialiased overflow-x-hidden`}>
-        <MobileMenuProvider>
-          {children}
-        </MobileMenuProvider>
+      <body className={`font-sans antialiased`}>
+        {children}
         <Analytics />
 
         {/* GA4 + Google Ads -- deferred to avoid render-blocking */}
