@@ -69,6 +69,14 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  href="/hub"
+                  className="text-background/70 hover:text-primary transition-colors text-sm"
+                >
+                  Marketing Hub
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/contact"
                   className="text-background/70 hover:text-primary transition-colors text-sm"
                 >

@@ -14,6 +14,7 @@ const navLinks = [
   { href: "#web-development", label: "Web Dev" },
   { href: "#hosting", label: "Hosting" },
   { href: "#content", label: "Content" },
+  { href: "/hub", label: "Hub" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ]
