@@ -10,7 +10,7 @@ import { ChevronRight, Mail, MapPin, Phone, Send } from "lucide-react"
 export const metadata: Metadata = {
   title: "Contact RankBoost Africa | Get a Free Digital Marketing Consultation",
   description:
-    "Get in touch with RankBoost Africa for a free digital marketing consultation. We help South African businesses grow with expert SEO, web development, hosting, and content marketing services.",
+    "Get in touch with us for a free digital marketing consultation and a free audit. For more information regarding our digital marketing services.",
   alternates: {
     canonical: "https://www.rankboost.africa/contact",
   },

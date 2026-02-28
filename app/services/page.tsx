@@ -17,7 +17,7 @@ import {
 } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Digital Marketing Services in South Africa | RankBoost Africa",
+  title: "| RankBoost Africa | Experts in Digital Marketing",
   description:
     "Explore our full range of digital marketing services: Local, Regional & National SEO, WordPress & Shopify development, managed hosting, and content marketing for South African businesses.",
   alternates: {
