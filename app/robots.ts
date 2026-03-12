@@ -5,107 +5,42 @@ export default function robots(): MetadataRoute.Robots {
 
   return {
     rules: [
-      // Allow legitimate search engines
-      {
-        userAgent: "Googlebot",
-        allow: "/",
-      },
-      {
-        userAgent: "Googlebot-Image",
-        allow: "/",
-      },
-      {
-        userAgent: "Googlebot-News",
-        allow: "/",
-      },
-      {
-        userAgent: "Bingbot",
-        allow: "/",
-      },
-      {
-        userAgent: "Slurp",
-        allow: "/",
-      },
-      {
-        userAgent: "DuckDuckBot",
-        allow: "/",
-      },
-      {
-        userAgent: "facebot",
-        allow: "/",
-      },
-      {
-        userAgent: "facebookexternalhit",
-        allow: "/",
-      },
-      {
-        userAgent: "Twitterbot",
-        allow: "/",
-      },
-      {
-        userAgent: "LinkedInBot",
-        allow: "/",
-      },
-      // Block malicious and scraper bots
-      ...[
-        "AhrefsBot",
-        "SemrushBot",
-        "MJ12bot",
-        "DotBot",
-        "BLEXBot",
-        "MegaIndex",
-        "SerpstatBot",
-        "DataForSeoBot",
-        "Rogerbot",
-        "SeekportBot",
-        "ZoominfoBot",
-        "Bytespider",
-        "GPTBot",
-        "CCBot",
-        "anthropic-ai",
-        "Claude-Web",
-        "Scrapy",
-        "HTTrack",
-        "WebCopier",
-        "WebZIP",
-        "Teleport",
-        "SiteSnagger",
-        "WebStripper",
-        "WebCapture",
-        "Offline Explorer",
-        "emailsiphon",
-        "EmailWolf",
-        "ExtractorPro",
-        "Harvest",
-        "CherryPicker",
-        "NICErsPRO",
-        "Alexibot",
-      ].map((bot) => ({
-        userAgent: bot,
-        disallow: "/",
-      })),
-      // Default rule for all other bots
       {
         userAgent: "*",
         allow: "/",
         disallow: [
           "/api/",
-          "/_next/",
-          "/private/",
-          "/admin",
+          "/admin/",
+          "/dashboard/",
           "/login",
           "/register",
-          "/dashboard",
-          "/config",
+          "/private/",
+          "/config/",
           "/.env",
           "/.git",
-          "/wp-admin",
-          "/wp-login",
-          "/administrator",
           "/phpmyadmin",
         ],
       },
+
+      // Block aggressive scraping bots
+      {
+        userAgent: [
+          "AhrefsBot",
+          "SemrushBot",
+          "MJ12bot",
+          "DotBot",
+          "BLEXBot",
+          "MegaIndex",
+          "SerpstatBot",
+          "Bytespider",
+          "GPTBot",
+          "CCBot",
+          "anthropic-ai",
+        ],
+        disallow: "/",
+      },
     ],
+
     sitemap: `${baseUrl}/sitemap.xml`,
     host: baseUrl,
   }
