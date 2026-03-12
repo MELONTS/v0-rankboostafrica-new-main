@@ -3,12 +3,12 @@ import { articles } from "@/lib/articles"
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://www.rankboost.africa"
-  const now = new Date().toISOString()
+  const now = new Date()
 
   const articleEntries: MetadataRoute.Sitemap = articles.map((article) => ({
     url: `${baseUrl}/hub/${article.slug}`,
-    lastModified: article.updatedAt || article.publishedAt,
-    changeFrequency: "monthly" as const,
+    lastModified: new Date(article.updatedAt || article.publishedAt),
+    changeFrequency: "weekly",
     priority: 0.7,
   }))
 
@@ -16,13 +16,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: baseUrl,
       lastModified: now,
-      changeFrequency: "daily",
-      priority: 1.0,
+      changeFrequency: "weekly",
+      priority: 1,
     },
     {
       url: `${baseUrl}/services`,
       lastModified: now,
-      changeFrequency: "daily",
+      changeFrequency: "monthly",
       priority: 0.9,
     },
     {
@@ -34,14 +34,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: `${baseUrl}/about`,
       lastModified: now,
-      changeFrequency: "daily",
-      priority: 0.8,
+      changeFrequency: "yearly",
+      priority: 0.6,
     },
     {
       url: `${baseUrl}/contact`,
       lastModified: now,
-      changeFrequency: "daily",
-      priority: 0.8,
+      changeFrequency: "yearly",
+      priority: 0.6,
     },
     ...articleEntries,
   ]
