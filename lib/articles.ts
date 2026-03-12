@@ -16,8 +16,8 @@ export interface Article {
 
 export const articles: Article[] = [
   {
-    slug: "seo-guide-south-african-businesses-2025",
-    title: "The Complete SEO Guide for South African Businesses in 2025",
+    slug: "seo-guide-south-african-businesses-2026",
+    title: "The Complete SEO Guide for South African Businesses in 2026",
     description:
       "Learn how South African SMEs can dominate Google search results with proven SEO strategies tailored for the local market. From keyword research to technical audits.",
     excerpt:
@@ -27,8 +27,8 @@ export const articles: Article[] = [
     imageAlt:
       "Digital analytics dashboard showing SEO metrics and search rankings for a South African business",
     author: "RankBoost Africa",
-    publishedAt: "2025-06-15",
-    updatedAt: "2025-06-15",
+    publishedAt: "2026-03-10",
+    updatedAt: "2026-03-10",
     readTime: "12 min read",
     tags: ["SEO", "Google Rankings", "South Africa", "Keyword Research", "Technical SEO"],
     content: [
@@ -44,7 +44,7 @@ export const articles: Article[] = [
       "Technical SEO forms the foundation of your ranking ability. Key areas include site speed (aim for under 3 seconds load time), mobile responsiveness, proper URL structure, XML sitemaps, robots.txt configuration, and fixing crawl errors. Google Search Console is your best free tool for monitoring technical health.",
       "Schema markup (structured data) is another powerful but underused technique in the SA market. Adding LocalBusiness, Product, FAQ, and Review schema helps Google understand your content better and can earn you rich snippets in search results - those enhanced listings with star ratings, prices, and FAQ dropdowns that dramatically increase click-through rates.",
       "## Content Strategy for Rankings",
-      "Content is still king in 2025. Google rewards websites that consistently publish high-quality, original content that genuinely helps users. Create a content calendar that addresses your customers' questions, pain points, and needs. Blog posts, how-to guides, case studies, and industry insights all contribute to building topical authority.",
+      "Content is still king in 2026. Google rewards websites that consistently publish high-quality, original content that genuinely helps users. Create a content calendar that addresses your customers' questions, pain points, and needs. Blog posts, how-to guides, case studies, and industry insights all contribute to building topical authority.",
       "Each piece of content should target a specific keyword cluster and include internal links to your service pages. This creates a strong internal linking structure that distributes ranking power throughout your site and helps Google understand the relationships between your pages.",
       "## Measuring SEO Success",
       "Track your SEO performance using Google Analytics 4 and Google Search Console. Key metrics to monitor include organic traffic growth, keyword rankings, click-through rates (CTR), bounce rates, and most importantly - conversions. SEO is not about vanity metrics like total traffic; it is about attracting the right visitors who become customers.",
@@ -63,8 +63,8 @@ export const articles: Article[] = [
     imageAlt:
       "Modern web development workspace with code editor showing React and Next.js project structure",
     author: "RankBoost Africa",
-    publishedAt: "2025-06-10",
-    updatedAt: "2025-06-10",
+    publishedAt: "2026-02-24",
+    updatedAt: "2026-02-24",
     readTime: "10 min read",
     tags: ["Web Development", "Next.js", "React", "WordPress", "Performance"],
     content: [
@@ -101,8 +101,8 @@ export const articles: Article[] = [
     imageAlt:
       "Content marketing planning session with editorial calendar and analytics reports on a desk",
     author: "RankBoost Africa",
-    publishedAt: "2025-06-05",
-    updatedAt: "2025-06-05",
+    publishedAt: "2026-02-10",
+    updatedAt: "2026-02-10",
     readTime: "9 min read",
     tags: ["Content Marketing", "Blogging", "Strategy", "SME", "Lead Generation"],
     content: [
@@ -140,8 +140,8 @@ export const articles: Article[] = [
     imageAlt:
       "Social media marketing analytics showing engagement metrics and growth charts for a South African brand",
     author: "RankBoost Africa",
-    publishedAt: "2025-06-01",
-    updatedAt: "2025-06-01",
+    publishedAt: "2026-01-15",
+    updatedAt: "2026-01-15",
     readTime: "11 min read",
     tags: ["Social Media", "Instagram", "Facebook", "Digital Marketing", "Brand Awareness"],
     content: [
