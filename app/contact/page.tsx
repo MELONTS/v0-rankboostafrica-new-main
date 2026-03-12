@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button"
 import { ChevronRight, Mail, MapPin, Phone, Send } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Contact RankBoost Africa | Get a Free Digital Marketing Consultation",
+  title: "Contact Us & Get a Free Digital Marketing Consultation",
   description:
     "Get in touch with us for a free digital marketing consultation and a free audit. For more information regarding our digital marketing services.",
   alternates: {
