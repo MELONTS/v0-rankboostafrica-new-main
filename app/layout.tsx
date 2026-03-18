@@ -140,6 +140,13 @@ export default function RootLayout({
         {/* Site Links Search Box */}
         <meta name="google" content="nositelinkssearchbox" />
         <meta name="google" content="notranslate" />
+
+        {/* Apollo Website Tracker */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `function initApollo(){var n=Math.random().toString(36).substring(7),o=document.createElement("script"); o.src="https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache="+n,o.async=!0,o.defer=!0, o.onload=function(){window.trackingFunctions.onLoad({appId:"69ba529855e752000d111b18"})}, document.head.appendChild(o)}initApollo();`,
+          }}
+        />
       </head>
       <body className={`font-sans antialiased`}>
         {children}
