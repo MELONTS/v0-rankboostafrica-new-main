@@ -4,6 +4,7 @@ import Script from "next/script"
 import { Geist, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { StructuredData } from "@/components/structured-data"
+import { TrustpilotBanner } from "@/components/trustpilot-banner"
 import "./globals.css"
 
 const _geist = Geist({ subsets: ["latin"] });
@@ -140,9 +141,17 @@ export default function RootLayout({
         {/* Site Links Search Box */}
         <meta name="google" content="nositelinkssearchbox" />
         <meta name="google" content="notranslate" />
+
+        {/* TrustBox script */}
+        <script
+          type="text/javascript"
+          src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js"
+          async
+        />
       </head>
       <body className={`font-sans antialiased`}>
         {children}
+        <TrustpilotBanner />
         <Analytics />
 
         {/* GA4 + Google Ads -- deferred to avoid render-blocking */}
