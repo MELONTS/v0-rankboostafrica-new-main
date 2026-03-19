@@ -71,6 +71,7 @@ export function TrustpilotBanner() {
               href="https://www.trustpilot.com/review/rankboost.africa"
               target="_blank"
               rel="noopener noreferrer"
+              className="text-primary hover:underline text-sm"
             >
               Review us on Trustpilot
             </a>
